@@ -75,6 +75,11 @@
                                 <a href="{{ url('login/facebook') }}"><i class="fab fa-facebook">Facebookでログイン</i></a>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-md-12 text-center">
+                                <a href="{{ url('login/google') }}"><i class="fab fa-google">Googleでログイン</i></a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
