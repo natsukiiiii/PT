@@ -67,7 +67,12 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12 text-center">
-                                <a href="{{ route('login.twitter') }}"><i class="fab fa-twitter">Twitterでログイン</i></a>
+                                <a href="{{ url('login/twitter') }}"><i class="fab fa-twitter">Twitterでログイン</i></a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12 text-center">
+                                <a href="{{ url('login/facebook') }}"><i class="fab fa-facebook">Facebookでログイン</i></a>
                             </div>
                         </div>
                     </form>

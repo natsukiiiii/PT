@@ -9,6 +9,11 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    function IdentityProviders()
+    {
+        // IdentityProviderモデルと紐付ける 1対多の関係
+        return $this->hasMany(IdentityProvider::class);
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','token','avatar',
+        'name', 'email', 'password','token','avatar','facebook_id'
     ];
 
     /**
