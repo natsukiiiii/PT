@@ -14,10 +14,17 @@ class ChangeEmailAndPasswordAddTokenAndAvatarToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->nullable()->change();
-            $table->string('password')->nullable()->change();
-            $table->string('token')->nullable()->after('name');
-            $table->text('avatar')->nullable()->after('token');
+            // $table->string('email')->nullable();
+            // $table->string('password')->nullable();
+            $table->string('token')->nullable();
+            $table->text('avatar')->nullable();
+            $table->string('image')->nullable();
+            $table->string('company')->nullable();
+            $table->string('specialized')->nullable();
+            $table->string('about')->nullable();
+            $table->string('sns_url')->nullable();
+            $table->string('facebook_id')->nullable()->unique();
+
         });
     }
 
@@ -29,10 +36,12 @@ class ChangeEmailAndPasswordAddTokenAndAvatarToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->nullable(false)->change();
-            $table->string('password')->nullable(false)->change();
-            $table->dropColumn('token');
-            $table->dropColumn('avatar');
+            // $table->string('email')->nullable(false);
+            // $table->string('password')->nullable(false);
+            // $table->dropColumn('token');
+            // $table->dropColumn('avatar');
+            // $table->dropColumn('facebook_id');
+            Schema::dropIfExists('password_resets');
         });
     }
 }
