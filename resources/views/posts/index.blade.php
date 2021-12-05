@@ -24,6 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title">タイトル:{{ $post->title }}</h5>
                         <p class="card-text">本文:{{ $post->text }}></p>
+                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細</a>
                         </div>
                         <div class="card-footer text-muted">
                             投稿日時: {{ $post->created_at }}
