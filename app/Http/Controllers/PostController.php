@@ -75,6 +75,9 @@ class PostController extends Controller
     {
         
         $post = Post::find($id);
+        if(Auth::id() !== $post->user_id){
+            return abort(404);
+        }
         return view('posts.edit', compact('post'));
     }
 
@@ -88,6 +91,10 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
+        if(Auth::id() !== $post->user_id){
+            return abort(404);
+        }
+
         $post->update($request->all());
         
         return view('posts.show', compact('post'));
@@ -102,6 +109,9 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        if(Auth::id() !== $post->user_id){
+            return abort(404);
+        }
         $post->delete();
         
         return redirect()->route('posts.index');
