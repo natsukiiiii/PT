@@ -20,23 +20,20 @@
                     <div class="card-header">
                         投稿一覧表示する
                     </div>
+                    @foreach ($posts as $post)
                     <div class="card-body">
-                        <h5 class="card-title">TEST</h5>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-
-
-                    </div>
-                    <div class="card-footer text-muted">
-                        2days ago
-                    </div>
-                    <button type="submit">編集</button>
-                    <button type="submit">削除</button>
-
-
+                        <h5 class="card-title">タイトル:{{ $post->title }}</h5>
+                        <p class="card-text">本文:{{ $post->text }}></p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            投稿日時: {{ $post->created_at }}
+                        </div>
+                    @endforeach
                 </div>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ route('posts.create') }}" class="btn btn-primary">投稿</a>
+
             </div>
         </div>
     </div>
