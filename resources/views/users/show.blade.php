@@ -22,15 +22,21 @@
                             <div>image</div>
                             <a href="#">edit</a>
 
-                            <div>name</div>
-                            <div>Following</div>
+                            <div>表示名:{{ $user->name }}</div>
+                            <div>職業名:{{ $user->specialized }}</div>
+                            <div>組織・会社名:{{ $user->company }}</div>
+                            <div>自己紹介:{{ $user->about }}</div>
+
+
+
+                            {{-- <div>Following</div>
                             <div>Followers</div>
-                            <div>現在地</div>
-                            <div>専攻、sepcific?</div>
-                            <div>social profile</div>
-                            <a href="#">Add</a>
-                            <div>medical societies　所属？</div>
-                            <a href="#">Add</a>
+                            <div>現在地</div> --}}
+                            <div>twitter: <a href="https://twitter.com/{{ $user->twitter_url }}">Twitter</a> </div>
+                            <div>Facebook: <a href="https://www.facebook.com/{{ $user->facebook_url }}">Facebook</a></div>
+                            <div>Instagram: <a href="https://www.instagram.com/{{ $user->instagram_url }}">Instagram</a></div>
+
+                            {{-- <div>medical societies　所属？</div> --}}
 
 
                         </div>

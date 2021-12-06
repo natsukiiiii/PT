@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\SettingRequest;
 use App\User;
 use Auth;
 
-class UserController extends Controller
+
+class SettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+        //
     }
 
     /**
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -35,8 +36,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
+        
 
     }
 
@@ -48,16 +50,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // $users = User::all();
-        $user = User::find($id);
-        // IF分でユーザーがいなかったら４０４に飛ばす
-        // if(Auth::id() !== $user->user_id){
-        //     return abort(404);
-        // }
-       
-        // dd($id);
-        return view('users.show', compact('user'));
-
+        //
     }
 
     /**
@@ -78,11 +71,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SettingRequest $request, $id)
     {
-        //
-    }
+        //  $input = $request->all();
 
+        //  $input['user_id'] = Auth::id();
+
+        //  User::create($input);
+
+ 
+        $user = User::find($id);
+
+        $user->update($request->all());
+        // dd($id);
+        return redirect()->route('setting.profile');
+        
+
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -92,5 +97,18 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+       /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function profile(Request $request)
+    {
+        $user = Auth::user();
+        // ユーザー渡す
+        return view('settings.profile', compact('user'));
     }
 }
