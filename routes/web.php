@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
 Route::resource('users', 'UserController');
 
+Route::get('settings/profile', 'SettingController@profile')->name('setting.profile');
+Route::patch('settings/{user}', 'SettingController@update')->name('setting.update');
+
+
+
