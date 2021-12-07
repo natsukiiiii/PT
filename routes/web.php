@@ -24,7 +24,10 @@ Route::resource('posts', 'PostController');
 Route::resource('users', 'UserController');
 
 Route::get('settings/profile', 'SettingController@profile')->name('setting.profile');
-Route::patch('settings/{user}', 'SettingController@update')->name('setting.update');
+Route::patch('settings/profile/{user}', 'SettingController@update_information')->name('setting.update_information');
+
+Route::get('settings/experience', 'SettingController@experience')->name('setting.experience');
+Route::patch('settings/experience/{user}', 'SettingController@update_experience')->name('setting.update_experience');
 
 
 

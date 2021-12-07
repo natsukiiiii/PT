@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\SettingRequest;
+use App\Http\Requests\ExperienceRequest;
 use App\User;
+use App\Experience;
 use Auth;
 
 
@@ -38,7 +39,7 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        
+
 
     }
 
@@ -71,23 +72,40 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SettingRequest $request, $id)
+
+    //  information
+    public function update_information(Request $request, $id)
     {
-        //  $input = $request->all();
-
-        //  $input['user_id'] = Auth::id();
-
-        //  User::create($input);
-
- 
         $user = User::find($id);
 
+
         $user->update($request->all());
-        // dd($id);
         return redirect()->route('setting.profile');
-        
+    }
+
+
+    // experience
+    public function update_experience(Request $experience)
+    {
+        $experience = Experience::updateOrCreate([
+            'id' => $experience->id,
+        ],[
+            'id' => $experience->id,
+            'name' => $experience->name,
+
+
+        ]);
+
+
+        // dd($request);
+
+        // dd($experience->name);
+
+        return redirect()->route('setting.experience');
+
 
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -110,5 +128,19 @@ class SettingController extends Controller
         $user = Auth::user();
         // ユーザー渡す
         return view('settings.profile', compact('user'));
+    }
+
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function experience(Request $experience)
+    {
+        $user = Auth::user();
+        // $experience = Experience::get();
+
+        return view('settings.experience', compact('user', 'experience'));
     }
 }
