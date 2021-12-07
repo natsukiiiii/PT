@@ -35,5 +35,9 @@ Route::patch('settings/education/{user}', 'SettingController@update_education')-
 Route::get('settings/publication', 'SettingController@publication')->name('setting.publication');
 Route::patch('settings/publication/{user}', 'SettingController@update_publication')->name('setting.update_publication');
 
+Route::get('settings/socialevent', 'SettingController@socialevent')->name('setting.socialevent');
+Route::patch('settings/socialevent/{user}', 'SettingController@update_socialevent')->name('setting.update_socialevent');
+
+
 
 
