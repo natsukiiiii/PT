@@ -7,6 +7,8 @@ use App\Http\Requests\ExperienceRequest;
 use App\User;
 use App\Experience;
 use App\Education;
+use App\Publication;
+
 
 use Auth;
 
@@ -125,6 +127,22 @@ class SettingController extends Controller
 
         }
 
+         // publication
+         public function update_publication(Request $publication)
+         {
+             $publication = Publication::updateOrCreate([
+                 'id' => $publication->id,
+             ],[
+                 'id' => $publication->id,
+                 'name' => $publication->name,
+
+
+             ]);
+             return redirect()->route('setting.publication');
+
+
+         }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -178,4 +196,19 @@ class SettingController extends Controller
 
         return view('settings.education', compact('user', 'education'));
     }
+
+          /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function publication(Request $publication)
+    {
+        $user = Auth::user();
+        // $experience = Experience::get();
+
+        return view('settings.publication', compact('user', 'publication'));
+    }
+
 }
