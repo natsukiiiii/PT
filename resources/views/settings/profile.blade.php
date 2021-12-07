@@ -21,7 +21,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h3>Settings</h3>
-                        <form action="{{ route('setting.update', $user->id) }}" method="post">
+                        <form action="{{ route('setting.update_information', $user->id) }}" method="post">
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                             <div class="form-group">

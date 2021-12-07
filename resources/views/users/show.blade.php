@@ -28,7 +28,6 @@
                             <div>自己紹介:{{ $user->about }}</div>
 
 
-
                             {{-- <div>Following</div>
                             <div>Followers</div>
                             <div>現在地</div> --}}
@@ -42,27 +41,22 @@
                         </div>
                     </div>
                 </div>
+                @foreach ($experience as $name)
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">
-                            <div>概要</div>
-                            <a href="#">edit</a>
+                            <div>経験:{{ $name->name }}</div>
+                            {{-- <div>経験:{{ $experience->name }}</div> --}}
+
                         </div>
                     </div>
                 </div>
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div>経験</div>
-                            <a href="#">edit</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">
                             <div>学歴</div>
-                            <a href="#">edit</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +71,6 @@
                     <div class="card-body">
                         <div class="form-group">
                             <div>参加した学会</div>
-                            <a href="#">edit</a>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Experience;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\User;
@@ -16,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+
     }
 
     /**
@@ -35,7 +36,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
 
     }
@@ -54,9 +55,14 @@ class UserController extends Controller
         // if(Auth::id() !== $user->user_id){
         //     return abort(404);
         // }
-       
+
+        // $user->load('experience');
+        $experience = Experience::latest('updated_at')->get('name');
+        // $experience = Experience::find($id);
+
+
         // dd($id);
-        return view('users.show', compact('user'));
+        return view('users.show', compact('user', 'experience'));
 
     }
 
