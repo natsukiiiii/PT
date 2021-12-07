@@ -53,13 +53,18 @@
                 </div>
                 @endforeach
 
+                @foreach ($education as $name)
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">
-                            <div>学歴</div>
+                            <div>学歴:{{ $name->name }}</div>
+                            {{-- <div>経験:{{ $experience->name }}</div> --}}
+
                         </div>
                     </div>
                 </div>
+                @endforeach
+
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">

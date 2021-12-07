@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ExperienceRequest;
 use App\User;
 use App\Experience;
+use App\Education;
+
 use Auth;
 
 
@@ -95,16 +97,33 @@ class SettingController extends Controller
 
 
         ]);
-
-
-        // dd($request);
-
-        // dd($experience->name);
-
         return redirect()->route('setting.experience');
 
 
     }
+
+        // education
+        public function update_education(Request $education)
+        {
+            $education = Education::updateOrCreate([
+                'id' => $education->id,
+            ],[
+                'id' => $education->id,
+                'name' => $education->name,
+
+
+            ]);
+            // dd($education->name);
+
+
+            // dd($request);
+
+            // dd($experience->name);
+
+            return redirect()->route('setting.education');
+
+
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -142,5 +161,21 @@ class SettingController extends Controller
         // $experience = Experience::get();
 
         return view('settings.experience', compact('user', 'experience'));
+    }
+
+
+
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function education(Request $education)
+    {
+        $user = Auth::user();
+        // $experience = Experience::get();
+
+        return view('settings.education', compact('user', 'education'));
     }
 }

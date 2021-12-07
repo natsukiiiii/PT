@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function experience(){
         return $this->hasMany('App\Experience');
     }
+    public function education(){
+        return $this->hasMany('App\Education');
+    }
+
 }

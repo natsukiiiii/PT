@@ -29,5 +29,8 @@ Route::patch('settings/profile/{user}', 'SettingController@update_information')-
 Route::get('settings/experience', 'SettingController@experience')->name('setting.experience');
 Route::patch('settings/experience/{user}', 'SettingController@update_experience')->name('setting.update_experience');
 
+Route::get('settings/education', 'SettingController@education')->name('setting.education');
+Route::patch('settings/education/{user}', 'SettingController@update_education')->name('setting.update_education');
+
 
 
