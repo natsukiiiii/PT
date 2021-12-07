@@ -72,13 +72,16 @@
                     </div>
                 </div>
                 @endforeach
+
+                @foreach ($socialevent as $name)
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">
-                            <div>参加した学会</div>
+                            <div>参加した学会:{{ $name->name }}</div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

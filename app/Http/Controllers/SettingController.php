@@ -8,6 +8,8 @@ use App\User;
 use App\Experience;
 use App\Education;
 use App\Publication;
+use App\Socialevent;
+
 
 
 use Auth;
@@ -143,6 +145,22 @@ class SettingController extends Controller
 
          }
 
+         //socialevent
+         public function update_socialevent(Request $socialevent)
+         {
+             $socialevent = Socialevent::updateOrCreate([
+                 'id' => $socialevent->id,
+             ],[
+                 'id' => $socialevent->id,
+                 'name' => $socialevent->name,
+
+
+             ]);
+             return redirect()->route('setting.socialevent');
+
+
+         }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -209,6 +227,20 @@ class SettingController extends Controller
         // $experience = Experience::get();
 
         return view('settings.publication', compact('user', 'publication'));
+    }
+
+          /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function socialevent(Request $socialevent)
+    {
+        $user = Auth::user();
+        // $experience = Experience::get();
+
+        return view('settings.socialevent', compact('user', 'socialevent'));
     }
 
 }
