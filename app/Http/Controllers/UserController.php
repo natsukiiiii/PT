@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Experience;
 use App\Education;
-
+use App\Publication;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
@@ -65,10 +65,12 @@ class UserController extends Controller
 
         $education = Education::latest('updated_at')->get('name');
 
+        $publication = Publication::latest('updated_at')->get('name');
+
 
         // dd($id);
         // return view('users.show', compact('user', 'experience'));
-        return view('users.show', compact('user', 'experience', 'education'));
+        return view('users.show', compact('user', 'experience', 'education', 'publication'));
 
     }
 

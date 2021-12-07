@@ -65,5 +65,8 @@ class User extends Authenticatable
     public function education(){
         return $this->hasMany('App\Education');
     }
+    public function publication(){
+        return $this->hasMany('App\Publication');
+    }
 
 }
