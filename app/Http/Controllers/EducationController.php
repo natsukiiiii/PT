@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Education;
+use Auth;
 
 
 class EducationController extends Controller
@@ -37,7 +38,11 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        Education::create($input);
+        return redirect()->route('education.index');
+
     }
 
     /**
