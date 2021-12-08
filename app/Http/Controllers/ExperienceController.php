@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Experience;
+use Auth;
 
 
 class ExperienceController extends Controller
@@ -37,7 +38,10 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        Experience::create($input);
+        return redirect()->route('experience.index');
     }
 
     /**
