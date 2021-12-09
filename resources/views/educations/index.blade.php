@@ -25,7 +25,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">タイトル：{{ $education->name }}</h5>
 
-                                    <a href="#" class="btn btn-primary">編集</a>
+                                    <a href="{{ route('education.edit', $education->id) }}" class="btn btn-primary">編集</a>
                                     <a href="#" class="btn btn-primary">削除</a>
 
                                 </div>

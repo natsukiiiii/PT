@@ -64,7 +64,9 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $education = Education::find($id);
+
+        return view('educations.edit', compact('education'));
     }
 
     /**
@@ -76,7 +78,10 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $education = Education::find($id);
+        // dd($id);
+        $education->update($request->all());
+        return view('educations.edit', compact('education'));
     }
 
     /**
