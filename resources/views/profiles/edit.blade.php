@@ -40,44 +40,39 @@
                             </div>
                             <div class="form-group">
                                 <p>表示名</p>
-                                <input type="text" value=" {{ $user->name }}" placeholder="氏名" name="name">
+                                <input type="text" value="{{ isset($user->name) }}" placeholder="氏名" name="name">
                                 {{-- <input type="text" value="{{ ($user->name) }}" placeholder="氏名" name="name"> --}}
 
                             </div>
                             <div class="form-group">
                                 <p>職業名</p>
-                                <input type="text" value="{{ $user->specialized }}" placeholder="職業名" name="specialized">
+                                <input type="text" value="{{ isset($user->specialized) }}" placeholder="職業名" name="specialized">
                                 {{-- <input type="text" value="{{ $user->specialized }}" placeholder="職業名" name="specialized"> --}}
 
                             </div>
                             <div class="form-group">
                                 <p>組織・会社名</p>
-                                <input type="text" value="{{ $user->company }}" placeholder="組織・会社名" name="company">
-                                {{-- <input type="text" value="{{ $user->company }}" placeholder="組織・会社名" name="company"> --}}
+                                <input type="text" value="{{ isset($user->company) }}" placeholder="組織・会社名" name="company">
 
                             </div>
                             <div class="form-group">
                                 <p>自己紹介</p>
-                                <input type="text" value="{{ $user->about }}" placeholder="自己紹介" name="about">
-                                {{-- <input type="text" value="{{ $user->about }}" placeholder="自己紹介" name="about"> --}}
+                                <input type="text" value="{{ isset($user->about) }}" placeholder="自己紹介" name="about">
 
                             </div>
                             <div class="form-group">
                                 <p>twitterユーザー名</p>
-                                <input type="text" value="{{ $user->twitter_url }}" placeholder="@なしで入力" name="twitter_url">
-                                {{-- <input type="text" value="{{ $user->twitter_url }}" placeholder="@なしで入力" name="twitter_url"> --}}
+                                <input type="text" value="{{ isset($user->twitter_url) }}" placeholder="@なしで入力" name="twitter_url">
 
                             </div>
                             <div class="form-group">
                                 <p>Facebookユーザー名</p>
-                                <input type="text" value="{{ $user->facebook_url }}" placeholder="ユーザー名だけ入力" name="facebook_url">
-                                {{-- <input type="text" value="{{ $user->facebook_url }}" placeholder="ユーザー名だけ入力" name="facebook_url"> --}}
+                                <input type="text" value="{{ isset($user->facebook_url) }}" placeholder="ユーザー名だけ入力" name="facebook_url">
 
                             </div>
                             <div class="form-group">
                                 <p>Instagramユーザー名</p>
-                                <input type="text" value="{{ $user->instagram_url }}" placeholder="ユーザー名だけ入力" name="instagram_url">
-                                {{-- <input type="text" value="{{ $user->instagram_url }}" placeholder="ユーザー名だけ入力" name="instagram_url"> --}}
+                                <input type="text" value="{{ isset($user->instagram_url) }}" placeholder="ユーザー名だけ入力" name="instagram_url">
 
                             </div>
                             <button type="submit" class="btn btn-primary">更新する</button>
