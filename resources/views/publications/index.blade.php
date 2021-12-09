@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <h5 class="card-title">タイトル：{{ $publication->name }}</h5>
 
-                            <a href="#" class="btn btn-primary">編集</a>
+                            <a href="{{ route('publication.edit', $publication->id) }}" class="btn btn-primary">編集</a>
                             <a href="#" class="btn btn-primary">削除</a>
 
                         </div>
@@ -43,7 +43,7 @@
                                 <p>出版物</p>
                                 <p>出版物へのリンクをここに貼り付けて、あなたのプロフィールに追加します。
                                     </p>
-                                <textarea name="name" value="" placeholder="ex) スポーツ整形" cols="30" rows="5"></textarea>
+                                <textarea name="name" value="" placeholder="ex) PT学会、足底板" cols="30" rows="5"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">更新する</button>
 

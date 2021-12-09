@@ -67,7 +67,8 @@ class PublicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $publication = Publication::find($id);
+        return view('publications.edit', compact('publication'));
     }
 
     /**
@@ -79,7 +80,10 @@ class PublicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $publication = Publication::find($id);
+        $publication->update($request->all());
+
+        return redirect()->route('publication.index');
     }
 
     /**
