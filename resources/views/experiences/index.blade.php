@@ -26,28 +26,34 @@
                             <a href="./education">学歴</a>
                             <a href="./publication">出版物</a>
                             <a href="./experience">参加学会</a>
-                         </div>
+                        </div>
                         @foreach ($experiences as $experience)
                         <div class="card-body">
                             <h5 class="card-title">経験分野:{{ $experience->name }}</h5>
 
                             <a href="{{ route('experience.edit', $experience->id) }}" class="btn btn-primary">編集</a>
-                            <a href="{{ route('experience.destroy', $experience->id) }}" class="btn btn-primary">削除</a>
+                             <form action=' {{ route('experience.destroy', $experience->id) }}' method='post'>
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type='submit' value='削除' class="btn btn-light"
+                                    onclick='return confirm("削除しますか？？");'>
+                                </form>
 
                         </div>
                         @endforeach
 
 
-                            <form action="{{ route('experience.store') }}" method="post">
+                        <form action="{{ route('experience.store') }}" method="post">
                             {{-- <form action="{{ route('setting.update_experience', $user->id) }}" method="post"> --}}
 
-                                {{csrf_field()}}
-                                {{-- {{method_field('PATCH')}} --}}
+                            {{csrf_field()}}
+                            {{-- {{method_field('PATCH')}} --}}
                             <div class="form-group">
                                 <p>経験分野</p>
                                 <p>あなたの経験を加える
                                     同僚を見つけてつながる</p>
-                                <textarea name="name" value="" placeholder="ex) OO大学病院, リハビリテーション科、整形外来" cols="30" rows="10"></textarea>
+                                <textarea name="name" value="" placeholder="ex) OO大学病院, リハビリテーション科、整形外来" cols="30"
+                                    rows="10"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">更新する</button>
 
