@@ -101,6 +101,8 @@ class SocialEventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $socialevent = Socialevent::find($id);
+        $socialevent -> delete();
+        return redirect()->route('socialevent.index');
     }
 }
