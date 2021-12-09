@@ -72,7 +72,10 @@ class SocialEventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $socialevent = Socialevent::find($id);
+        // dd($experience);
+        return view('socialevents.edit', compact('socialevent'));
+        // dd($experiences->id);
     }
 
     /**
@@ -84,7 +87,10 @@ class SocialEventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $socialevent = Socialevent::find($id);
+        // dd($id);
+        $socialevent->update($request->all());
+        return view('socialevents.edit', compact('socialevent'));
     }
 
     /**

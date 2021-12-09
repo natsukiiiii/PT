@@ -25,7 +25,7 @@
                             <a href="./experience">経験分野</a>
                             <a href="./education">学歴</a>
                             <a href="./publication">出版物</a>
-                            <a href="./experience">参加学会</a>
+                            <a href="./socialevent">参加学会</a>
                         </div>
                         @foreach ($experiences as $experience)
                         <div class="card-body">

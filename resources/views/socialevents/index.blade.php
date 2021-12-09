@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <h5 class="card-title">タイトル：{{ $socialevent->name }}</h5>
 
-                            <a href="#" class="btn btn-primary">編集</a>
+                            <a href="{{ route('socialevent.edit', $socialevent->id) }}" class="btn btn-primary">編集</a>
                             <a href="#" class="btn btn-primary">削除</a>
 
                         </div>
