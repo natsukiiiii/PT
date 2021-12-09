@@ -26,7 +26,11 @@
                             <h5 class="card-title">タイトル：{{ $socialevent->name }}</h5>
 
                             <a href="{{ route('socialevent.edit', $socialevent->id) }}" class="btn btn-primary">編集</a>
-                            <a href="#" class="btn btn-primary">削除</a>
+                            <form action='{{ route('socialevent.destroy', $socialevent->id) }}' method='post'>
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type='submit' value='削除' class="btn btn-light" onclick='return confirm("削除しますか？？");'>
+                            </form>
 
                         </div>
                         @endforeach
