@@ -90,7 +90,8 @@ class SocialEventController extends Controller
         $socialevent = Socialevent::find($id);
         // dd($id);
         $socialevent->update($request->all());
-        return view('socialevents.edit', compact('socialevent'));
+        // return view('socialevents.edit', compact('socialevent'));
+        return redirect()->route('socialevent.index');
     }
 
     /**

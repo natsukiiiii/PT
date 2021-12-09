@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Publication;
+use App\User;
+
 use Auth;
 
 class PublicationController extends Controller
@@ -37,10 +39,13 @@ class PublicationController extends Controller
      */
     public function store(Request $request)
     {
+        // $user = User::all();
+        $auth_id = Auth::id();
+
         $input = $request->all();
         $input['user_id'] = Auth::id();
         Publication::create($input);
-        return redirect()->route('publication.index');
+        return redirect()->route('publication.index', $auth_id);
     }
 
     /**

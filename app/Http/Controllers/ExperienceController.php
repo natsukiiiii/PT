@@ -83,7 +83,9 @@ class ExperienceController extends Controller
         $experience = Experience::find($id);
         // dd($id);
         $experience->update($request->all());
-        return view('experiences.edit', compact('experience'));
+        // return view('experiences.edit', compact('experience'));
+        return redirect()->route('experience.index');
+
     }
 
     /**
