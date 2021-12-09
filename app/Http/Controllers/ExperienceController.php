@@ -52,7 +52,8 @@ class ExperienceController extends Controller
      */
     public function show($id)
     {
-        //
+
+
     }
 
     /**
@@ -63,7 +64,11 @@ class ExperienceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $experience = Experience::find($id);
+        // dd($experience);
+        return view('experiences.edit', compact('experience'));
+        // dd($experiences->id);
+
     }
 
     /**
@@ -75,7 +80,10 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $experience = Experience::find($id);
+        // dd($id);
+        $experience->update($request->all());
+        return view('experiences.index', compact('experience'));
     }
 
     /**
