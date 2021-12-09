@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h3>経験分野</h3>
                         <div class="form-group">
-                            <a href="./profile/{profile}/edit">プロフィール</a>
+                             <a href="{{ route('profile.edit', Auth::id()) }}">プロフィール</a>
                             <a href="./experience">経験分野</a>
                             <a href="./education">学歴</a>
                             <a href="./publication">出版物</a>
