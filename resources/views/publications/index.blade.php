@@ -16,7 +16,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-
                 <div class="card text-center">
                     <div class="card-body">
                         <h3>出版物</h3>
@@ -25,7 +24,12 @@
                             <h5 class="card-title">タイトル：{{ $publication->name }}</h5>
 
                             <a href="{{ route('publication.edit', $publication->id) }}" class="btn btn-primary">編集</a>
-                            <a href="#" class="btn btn-primary">削除</a>
+                            <form action='{{ route('publication.destroy', $publication->id) }}' method='post'>
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type='submit' value='削除' class="btn btn-light" onclick='return confirm("削除しますか？？");'>
+                            </form>
+
 
                         </div>
                         @endforeach
