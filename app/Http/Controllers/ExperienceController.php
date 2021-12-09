@@ -94,6 +94,8 @@ class ExperienceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $experience = Experience::find($id);
+        $experience -> delete();
+        return redirect()->route('experience.index');
     }
 }
