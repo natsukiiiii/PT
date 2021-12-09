@@ -81,7 +81,8 @@ class EducationController extends Controller
         $education = Education::find($id);
         // dd($id);
         $education->update($request->all());
-        return view('educations.edit', compact('education'));
+        // return view('educations.edit', compact('education'));
+        return redirect()->route('education.index');
     }
 
     /**
@@ -92,6 +93,8 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $education = Education::find($id);
+        $education -> delete();
+        return redirect()->route('education.index');
     }
 }
