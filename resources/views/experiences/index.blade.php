@@ -20,12 +20,19 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h3>経験分野</h3>
+                        <div class="form-group">
+                            <a href="./profile/{profile}/edit">プロフィール</a>
+                            <a href="./experience">経験分野</a>
+                            <a href="./education">学歴</a>
+                            <a href="./publication">出版物</a>
+                            <a href="./experience">参加学会</a>
+                         </div>
                         @foreach ($experiences as $experience)
                         <div class="card-body">
-                            <h5 class="card-title">タイトル：{{ $experience->name }}</h5>
+                            <h5 class="card-title">経験分野:{{ $experience->name }}</h5>
 
-                            <a href="#" class="btn btn-primary">編集</a>
-                            <a href="#" class="btn btn-primary">削除</a>
+                            <a href="{{ route('experience.edit', $experience->id) }}" class="btn btn-primary">編集</a>
+                            <a href="{{ route('experience.destroy', $experience->id) }}" class="btn btn-primary">削除</a>
 
                         </div>
                         @endforeach
@@ -36,13 +43,6 @@
 
                                 {{csrf_field()}}
                                 {{-- {{method_field('PATCH')}} --}}
-                            <div class="form-group">
-                               <a href="./profile/{profile}/edit">プロフィール</a>
-                               <a href="./experience">経験分野</a>
-                               <a href="./education">学歴</a>
-                               <a href="./publication">出版物</a>
-                               <a href="./experience">参加学会</a>
-                            </div>
                             <div class="form-group">
                                 <p>経験分野</p>
                                 <p>あなたの経験を加える
