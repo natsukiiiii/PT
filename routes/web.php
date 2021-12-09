@@ -24,6 +24,12 @@ Route::resource('posts', 'PostController');
 Route::resource('users', 'UserController');
 
 Route::resource('settings/profile', 'ProfileController');
+// Route::get('settings/profile/edit', 'ProfileController@edit')->name('usersProfile.edit');
+// Route::post('settings/profile/edit', 'ProfileController@update')->name('usersProfile.update');
+
+
+// Route::post('settings/profile/{id}', 'ProfileController@store')->name('profile.id');
+
 Route::resource('settings/experience', 'ExperienceController');
 Route::resource('settings/education', 'EducationController');
 Route::resource('settings/publication', 'PublicationController');

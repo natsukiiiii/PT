@@ -15,8 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = User::first();
-        return view('profiles.index', compact('user'));
+
 
         // プロフィールコントローラーの内容をusersコントローラーへ
     }
@@ -39,10 +38,8 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request::all();
-        $input['user_id'] = Auth::id();
-        User::create($input);
-        return redirect()->route('profile.index');
+
+
 
     }
 
@@ -65,9 +62,13 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('profiles.edit', compact('user'));
     }
 
+    // 撮ってきたID取得して
+    // edit.bladeに渡して
+    // edit.bladeからupdateに渡す
     /**
      * Update the specified resource in storage.
      *
@@ -75,9 +76,32 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $user)
     {
-        //
+        // $user = User::find($request->id);
+        // $user->update($request->all());
+        // return redirect()->route('profile.edit');
+
+        $auth_id = Auth::id();
+
+        $user = User::updateOrCreate([
+            'id' => $auth_id,
+        ],[
+            'id' => $auth_id,
+            'name' => $user->name,
+            'specialized' => $user->specialized,
+            'company' => $user->company,
+            'about' => $user->about,
+            'twitter_url' => $user->twitter_url,
+            'facebook_url' => $user->facebook_url,
+            'instagram_url' => $user->instagram_url,
+
+
+
+        ]);
+
+        // $auth_id = Auth::id();
+        return redirect()->route('profile.edit', $auth_id);
     }
 
     /**
