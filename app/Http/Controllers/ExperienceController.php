@@ -83,7 +83,7 @@ class ExperienceController extends Controller
         $experience = Experience::find($id);
         // dd($id);
         $experience->update($request->all());
-        return view('experiences.index', compact('experience'));
+        return view('experiences.edit', compact('experience'));
     }
 
     /**
