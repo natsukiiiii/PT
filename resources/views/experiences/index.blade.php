@@ -28,7 +28,9 @@
                             <a href="./socialevent">参加学会</a>
                         </div>
                         @foreach ($experiences as $experience)
+                        <div class="card text-center">
                         <div class="card-body">
+                            <div class="form-group">
                             <h5 class="card-title">経験分野:{{ $experience->name }}</h5>
 
                             <a href="{{ route('experience.edit', $experience->id) }}" class="btn btn-primary">編集</a>
@@ -38,6 +40,9 @@
                                 <input type='submit' value='削除' class="btn btn-light"
                                     onclick='return confirm("削除しますか？？");'>
                                 </form>
+                            </div>
+                        </div>
+
 
                         </div>
                         @endforeach
