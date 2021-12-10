@@ -35,7 +35,7 @@
                                     {{ $publication->name }}
                                 </textarea>
 
-                            <br><button type="submit" class="btn btn-primary">編集する</button>
+                            <button type="submit" class="btn btn-primary">編集する</button>
 
                         </form>
                     </div>

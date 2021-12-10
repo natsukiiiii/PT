@@ -3,27 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\CommentRequest;
+use App\Comment;
 use App\Post;
 use Auth;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
-
     public function index()
     {
-        $posts = Post::all();
-        $posts->load('user');
-        return view('posts.index', compact('posts'));
+        //
     }
 
     /**
@@ -33,7 +31,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -42,15 +40,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(CommentRequest $request)
     {
-        $input = $request->all();
+        // dd($request);
+        $post = Post::find($request->post_id);
+        $comment = new Comment;
+        $comment -> text = $request -> text;
+        $comment -> user_id = Auth::id();
+        $comment -> post_id = $request -> post_id;
+        $comment -> save();
 
-        $input['user_id'] = Auth::id();
+        // dd($comment);
 
-        Post::create($input);
+        return view('posts.show', compact('post'));
+        // return redirect()->route('posts.show', compact('post'));
 
-        return redirect()->route('posts.index');
     }
 
     /**
@@ -61,9 +65,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        $post->load('user', 'comments');
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**
@@ -74,12 +76,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-
-        $post = Post::find($id);
-        if(Auth::id() !== $post->user_id){
-            return abort(404);
-        }
-        return view('posts.edit', compact('post'));
+        //
     }
 
     /**
@@ -91,14 +88,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-        if(Auth::id() !== $post->user_id){
-            return abort(404);
-        }
-
-        $post->update($request->all());
-
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**
@@ -109,12 +99,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        if(Auth::id() !== $post->user_id){
-            return abort(404);
-        }
-        $post->delete();
-
-        return redirect()->route('posts.index');
+        //
     }
 }
