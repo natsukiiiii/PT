@@ -19,8 +19,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="form-group">
-                            <div>image</div>
-                            <a href="#">edit</a>
+                            <img src="{{ $user->image_path }}" alt="画像">
 
                             <div>表示名:{{ $profileUser->name }}</div>
                             <div>職業名:{{ $user->specialized }}</div>
