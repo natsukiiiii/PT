@@ -21,22 +21,24 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h3>profile</h3>
-                        <form action="{{ route('profile.update', Auth::id()) }}" method="post">
+                        <form action="{{ route('profile.update', Auth::id()) }}" method="post" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                             <div class="form-group">
                                <a href="./edit">プロフィール</a>
-                               {{-- <a href="./edit">プロフィール</a> --}}
-
                                <a href="../../experience">経験分野</a>
                                <a href="../../education">学歴</a>
                                <a href="../../publication  ">出版物</a>
                                <a href="../../socialevent">参加学会</a>
                             </div>
-                            <div class="form-group">
-                                <p>image</p>
-                               <img src="" alt="" name="image">
+                            {{-- <div class="form-group">
+                                <label for="image">画像</label>
+                               <input type="file" class="form-control-file" id="image" name="image">
                                 <a href="">変更する</a>
+                            </div> --}}
+                            <div class="form-group">
+                                <label for="image">画像</label>
+                                <input type="file" class="form-control-file" id="image" name="image">
                             </div>
                             <div class="form-group">
                                 <p>表示名</p>

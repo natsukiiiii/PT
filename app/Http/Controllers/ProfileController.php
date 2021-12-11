@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use JD\Cloudder\Facades\Cloudder;
+use JD\Cloudder\CloudderServiceProvider;
+
 
 class ProfileController extends Controller
 {
@@ -63,6 +66,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        // if(Auth::id() !== $user->user_id){
+        //     return abort(404);
+        // }
         return view('profiles.edit', compact('user'));
     }
 
@@ -89,6 +95,11 @@ class ProfileController extends Controller
         ],[
             'id' => $auth_id,
             'name' => $user->name,
+            'image' => $user->image,
+            'image_path' => $user->image_path,
+            'public_id' => $user->public_id,
+
+
             'specialized' => $user->specialized,
             'company' => $user->company,
             'about' => $user->about,
@@ -100,7 +111,26 @@ class ProfileController extends Controller
 
         ]);
 
-        // $auth_id = Auth::id();
+        // $user = new User;
+
+        // if ($image = $user->file('image')) {
+        // if ($image = $user->find('image')) {
+        if ($image = $user->image) {
+
+            $image_path = $image->getRealPath();
+            Cloudder::upload($image_path, null);
+            //直前にアップロードされた画像のpublicIdを取得する。
+            $publicId = Cloudder::getPublicId();
+            $logoUrl = Cloudder::secureShow($publicId, [
+                'width'     => 200,
+                'height'    => 200
+            ]);
+            $user->image_path = $logoUrl;
+            $user->public_id  = $publicId;
+        }
+        $user->save();
+
+
         return redirect()->route('profile.edit', $auth_id);
     }
 
@@ -112,6 +142,19 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $user = PoUserst::find($id);
+
+        if(Auth::id() !== $user->user_id){
+            return abort(404);
+        }
+
+        if(isset($user->public_id)){
+            Cloudder::destroyImage($user->public_id);
+        }
+
+        $user -> delete();
+
+        return redirect()->route('users.show');
     }
 }

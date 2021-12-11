@@ -28,6 +28,8 @@ class User extends Authenticatable
         'avatar',
         'facebook_id',
         'image',
+        'image_path',
+        'public_id',
         'name',
         'specialized',
         'company',
@@ -35,6 +37,7 @@ class User extends Authenticatable
         'twitter_url',
         'facebook_url',
         'instagram_url',
+
     ];
 
     /**

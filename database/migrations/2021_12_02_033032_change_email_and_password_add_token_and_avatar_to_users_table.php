@@ -27,6 +27,8 @@ class ChangeEmailAndPasswordAddTokenAndAvatarToUsersTable extends Migration
             $table->string('twitter_url')->nullable();
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
+            $table->text('image_path')->nullable();
+            $table->text('public_id')->nullable();
 
 
 
