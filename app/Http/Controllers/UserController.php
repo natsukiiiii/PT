@@ -23,6 +23,7 @@ class UserController extends Controller
     public function index()
     {
 
+
     }
 
     /**
@@ -54,28 +55,22 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // $users = User::all();
         $user = User::find($id);
         // IF分でユーザーがいなかったら４０４に飛ばす
-        // if(Auth::id() !== $user->user_id){
-        //     return abort(404);
-        // }
+        if(Auth::id() !== $user->id){
+            return abort(404);
+        }
+        $profileUser = User::latest('updated_at')->first('name','specialized');
 
-        // $user->load('experience');
+
         $experience = Experience::latest('updated_at')->get('name');
-        // $experience = Experience::find($id);
 
         $education = Education::latest('updated_at')->get('name');
 
         $publication = Publication::latest('updated_at')->get('name');
 
         $socialevent = Socialevent::latest('updated_at')->get('name');
-
-
-
-        // dd($id);
-        // return view('users.show', compact('user', 'experience'));
-        return view('users.show', compact('user', 'experience', 'education', 'publication', 'socialevent'));
+        return view('users.show', compact('user', 'profileUser', 'experience', 'education', 'publication', 'socialevent'));
 
     }
 

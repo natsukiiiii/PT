@@ -156,7 +156,9 @@ class SettingController extends Controller
 
 
              ]);
-             return redirect()->route('setting.socialevent');
+
+             $auth_id = Auth::id();
+             return redirect()->route('users.show', $auth_id);
 
 
          }
@@ -241,6 +243,8 @@ class SettingController extends Controller
         // $experience = Experience::get();
 
         return view('settings.socialevent', compact('user', 'socialevent'));
+        // return view('settings.socialevent', compact('user', 'socialevent'));
+
     }
 
 }
