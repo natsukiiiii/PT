@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\QuestionRequest;
+use App\Question;
+use Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class QuestionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,11 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('questions.index');
+        $questions = Question::all();
+        $questions->load('user');
+
+
+        return view('questions.index', compact('questions'));
     }
 
     /**
@@ -33,9 +46,12 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
-        //
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        Question::create($input);
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -46,7 +62,8 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+         $question = Question::find($id);
+        return view('questions.show', compact('question'));
     }
 
     /**
@@ -57,7 +74,13 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = Question::find($id);
+
+        if(Auth::id() !== $question->user_id){
+            return abort(404);
+        }
+
+        return view('questions.edit', compact('question'));
     }
 
     /**
@@ -67,9 +90,14 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuestionRequest $request, $id)
     {
-        //
+        $question = Question::find($id);
+        if(Auth::id() !== $question->user_id){
+            return abort(404);
+        }
+        $question->update($request->all());
+        return view('questions.show', compact('question'));
     }
 
     /**
@@ -80,6 +108,11 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $question = Question::find($id);
+        if(Auth::id() !== $question->user_id){
+            return abort(404);
+        }
+        $question -> delete();
+        return redirect()->route('questions.index');
     }
 }

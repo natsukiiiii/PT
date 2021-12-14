@@ -78,5 +78,13 @@ class User extends Authenticatable
     public function socialevent(){
         return $this->hasMany('App\Socialevent');
     }
+    public function questions()
+    {
+        return $this->hasMany('App\Question');
+    }
+    public function questionsComments()
+    {
+        return $this->hasMany('App\QuestionsComment');
+    }
 
 }
