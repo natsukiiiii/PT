@@ -1,4 +1,5 @@
 <!doctype html>
+{{-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -37,6 +38,22 @@
                 </button>
 
 
+                {{-- プロフィール情報へリンク --}}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{-- <a href="{{ route('users.show', Auth::id()) }}">アイコン <i class="fas fa-user-circle fa-lg"> </i> </a> --}}
+                            <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">profile <i class="fas fa-user-circle fa-lg"> </i> </a>
+
+                            <span class="caret"></span>
+                        </a>
+                    </ul>
+                </div>
+
+
+
                 {{-- 投稿、質問　プルダウン --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -51,7 +68,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 投稿 / 質問 <span class="caret"></span>
                             </a>
-                                {{-- プルダウンの表示設定 --}}
+                            {{-- プルダウンの表示設定 --}}
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('posts.create') }}"
                                     onclick="event.preventDefault(); document.getElementById('posts-form').submit();">
@@ -127,6 +144,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="../../js/js/main.js"></script>
 </body>
 
 </html>
