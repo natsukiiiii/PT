@@ -29,32 +29,39 @@
                         </div>
 
 
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    @foreach ($educations as $education)
+                                    <div class="card text-center">
 
-                        @foreach ($educations as $education)
-                        <div class="card text-center">
+                                        <div class="card-body">
+                                            <div class="form-group">
 
-                            <div class="card-body">
-                                <div class="form-group">
+                                                <h5 class="card-title">{{ $education->name }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-right">
+                                        <a href="{{ route('education.edit', $education->id) }}" class="btn btn-primary"
+                                            style="background-color:#2E77FD;color:white;">編集</a>
+                                    </div>
+                                    <div class="col-sm-12 text-right">
+                                        <form action=' {{ route('education.destroy', $education->id) }}' method='post'>
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <input type='submit' value='削除' class="btn btn-light"
+                                                onclick='return confirm("削除しますか？？");'>
+                                        </form>
+                                    </div>
 
-                                    <h5 class="card-title">{{ $education->name }}</h5>
+
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                            <div class="col-sm-12 text-right">
-                                <a href="{{ route('education.edit', $education->id) }}" class="btn btn-primary"
-                                    style="background-color:#2E77FD;color:white;">編集</a>
-                            </div>
-                            <div class="col-sm-12 text-right">
-                                <form action=' {{ route('education.destroy', $education->id) }}' method='post'>
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    <input type='submit' value='削除' class="btn btn-light"
-                                        onclick='return confirm("削除しますか？？");'>
-                                </form>
-                            </div>
 
 
-                        @endforeach
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
