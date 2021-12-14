@@ -25,9 +25,10 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{{ route('comments.store') }}" method="post">
+            <form action="{{ route('questionsComments.store') }}" method="post">
                 {{csrf_field()}}
                 <input type="hidden" name="question_id" value="{{ $question->id }}">
+                {{-- どの質問に紐づいているのか保存している --}}
                 <div class="form-group">
                     <label>コメント</label>
                     <textarea class="form-control" placeholder="内容" rows="5" name="text"></textarea>
@@ -38,12 +39,12 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @foreach ($question->comments as $comment)
+            @foreach ($question->questionsComments as $questionsComment)
             <div class="card mt-3">
-                <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
+                <h5 class="card-header">投稿者：{{ $questionsComment->user->name }}</h5>
                 <div class="card-body">
-                    <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
-                    <p class="card-text">内容：{{ $comment->text }}</p>
+                    <h5 class="card-title">投稿日時：{{ $questionsComment->created_at }}</h5>
+                    <p class="card-text">内容：{{ $questionsComment->text }}</p>
                 </div>
             </div>
             @endforeach
