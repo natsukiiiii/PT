@@ -57,9 +57,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
         // IF分でユーザーがいなかったら４０４に飛ばす
-        if(Auth::id() !== $user->id){
-            return abort(404);
-        }
+        // if(Auth::id() !== $user->id){
+        //     return abort(404);
+        // }
         $profileUser = User::latest('updated_at')->first('name','specialized');
 
 

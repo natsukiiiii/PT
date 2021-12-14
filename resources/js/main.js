@@ -22,3 +22,7 @@ Vue.use(window['mavon-editor'])
 var app = new Vue({
     el: '#app'
 })
+
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
