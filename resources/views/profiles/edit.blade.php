@@ -25,11 +25,15 @@
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                             <div class="form-group">
+                               <a href="{{ route('users.show', Auth::id()) }}">プロフィール情報</a>
                                <a href="./edit">プロフィール</a>
                                <a href="../../experience">経験分野</a>
                                <a href="../../education">学歴</a>
                                <a href="../../publication  ">出版物</a>
                                <a href="../../socialevent">参加学会</a>
+                               <br>
+                               {{-- <a href="{{ route('users.show', Auth::id()) }}">検索</a> --}}
+
                             </div>
                             {{-- <div class="form-group">
                                 <label for="image">画像</label>

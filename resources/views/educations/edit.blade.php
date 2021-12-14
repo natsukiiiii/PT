@@ -31,7 +31,7 @@
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                                 <p>学歴</p>
-                                <textarea name="name" value="{{ $education->name }}" placeholder="ex) OO大学病院, リハビリテーション科、整形外来" cols="30" rows="10">
+                                <textarea name="name" value="{{ $education->name }}" placeholder="ex) OO大学, リハビリテーション科" cols="30" rows="10">
                                     {{ $education->name }}
                                 </textarea>
 

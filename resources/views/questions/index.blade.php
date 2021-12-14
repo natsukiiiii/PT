@@ -41,7 +41,7 @@
                     <div class="card-header">
                         投稿一覧表示する
                     </div>
-                    {{-- @foreach ($questions as $question)
+                    @foreach ($questions as $question)
                     <div class="card-body">
                         <h5 class="card-title">タイトル:{{ $question->title }}</h5>
                         <p class="card-text">本文:{{ $question->text }}</p>
@@ -52,7 +52,7 @@
                         <div class="card-footer text-muted">
                             投稿日時: {{ $question->created_at }}に投稿
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-2">
