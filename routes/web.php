@@ -23,6 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
 Route::resource('users', 'UserController');
 Route::resource('comments', 'CommentController');
+Route::resource('questions', 'QuestionController');
+Route::resource('questionsComments', 'QuestionsCommentController');
+
 
 
 Route::resource('settings/profile', 'ProfileController');
