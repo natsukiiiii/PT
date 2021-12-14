@@ -50,6 +50,7 @@ class QuestionsCommentController extends Controller
         $questionsComment -> question_id = $request -> question_id;
 
         $questionsComment -> save();
+        $request->session()->regenerateToken();
         return view('questions.show', compact('question'));
     }
 
