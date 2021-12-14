@@ -51,6 +51,7 @@ class CommentController extends Controller
         $comment -> save();
 
         // dd($comment);
+        $request->session()->regenerateToken();
 
         return view('posts.show', compact('post'));
         // return redirect()->route('posts.show', compact('post'));
