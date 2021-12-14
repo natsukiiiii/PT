@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Post;
+
 class LoginController extends Controller
 {
     /*
@@ -74,4 +76,10 @@ class LoginController extends Controller
             return $user;
         }
     }
+    protected function redirectTo() {
+        if(! Auth::user()) {
+             return '/';
+        }
+        return route('posts.index', ['post' => Post::all()]);
+     }
 }
