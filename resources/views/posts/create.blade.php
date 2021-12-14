@@ -40,7 +40,7 @@
                     ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" name="text">
                     </textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">投稿</button>
+                            <button type="submit" class="btn btn-primary">投稿する</button>
 
                         </form>
                     </div>
