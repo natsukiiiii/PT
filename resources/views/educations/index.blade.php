@@ -15,7 +15,7 @@
     @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-8">
 
                 <div class="card text-center" style="border: none">
                     <div class="card-body">

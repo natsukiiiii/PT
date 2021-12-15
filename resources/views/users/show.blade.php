@@ -20,7 +20,7 @@
                 <div class="text-center">
 
                     <div class="card-body" >
-                        <h3 style="margin-bottom: 40px;" class="text-left font-weight-bold">Settings</h3>
+                        <h3 style="margin:40px 0 40px 0;font-size:34px;" class="text-left font-weight-bold">Profile</h3>
                         <div class="form-group text-left" style="border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
                             <a href="{{ route('profile.edit', Auth::id()) }}" style="color:#6B778C;" class="font-weight-bold">プロフィール</a>
                             <a href="{{ route('experience.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;">経験分野</a>
