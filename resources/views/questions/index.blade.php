@@ -50,7 +50,7 @@
                         <a href="{{ route('questions.show', $question->id) }}" class="btn btn-primary">詳細</a>
                         </div>
                         <div class="card-footer text-muted">
-                            投稿日時: {{ $question->created_at }}に投稿
+                            投稿日時: {{ $question->created_at->format('Y年m月d日') }}に投稿
                         </div>
                     @endforeach
                 </div>
