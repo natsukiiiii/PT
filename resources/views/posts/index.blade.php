@@ -32,7 +32,7 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="card text-center">
                     <div class="card-header">
                         <a href="{{ route('questions.index') }}">!! 回答募集中 !!</a>

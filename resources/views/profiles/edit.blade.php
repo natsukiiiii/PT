@@ -21,13 +21,13 @@
                 <div class="text-center">
                     <div class="card-body">
                         <h3 style="margin-top:40px; margin-bottom: 40px; font-size:34px;"
-                            class="text-left font-weight-bold">profile</h3>
+                            class="text-left font-weight-bold">Settings</h3>
                         <form action="{{ route('profile.update', Auth::id()) }}" method="post"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             {{method_field('PATCH')}}
                             <div class="form-group text-left" style="border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
-                                <a href="{{ route('users.show', Auth::id()) }}">プロフィール情報</a>
+                                <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">プロフィール情報</a>
                                 <a style="color:#6B778C; margin-left:5%; font-size:1em;" href="./edit">プロフィール</a>
                                 <a style="color:#6B778C; margin-left:5%; font-size:1em;"
                                     href="../../experience">経験分野</a>
