@@ -44,22 +44,21 @@
                     <ul class="navbar-nav ml-auto">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{-- <a href="{{ route('users.show', Auth::id()) }}">アイコン <i class="fas fa-user-circle fa-lg"> </i> </a> --}}
-                            <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">profile <i class="fas fa-user-circle fa-lg"> </i> </a>
 
+                            @if(Auth::check())
+                             <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">profile <i
+                                    class="fas fa-user-circle fa-lg"> </i> </a>
+                            @endif
+                            @csrf
                             <span class="caret"></span>
                         </a>
                     </ul>
                 </div>
 
 
-
                 {{-- 投稿、質問　プルダウン --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -121,8 +120,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
