@@ -22,11 +22,11 @@
                         <h3 style="margin-bottom: 40px;" class="text-left font-weight-bold">参加学会</h3>
                         <div class="form-group">
                             <a href="{{ route('profile.edit', Auth::id()) }}" style="color:#6B778C;">プロフィール</a>
-                            <a href="./experience" class="font-weight-bold"
-                                style="color:#2E77FD; margin-left:5%;">経験分野</a>
+                            <a href="./experience"
+                                style="color:#6B778C; margin-left:5%;">経験分野</a>
                             <a href="./education" style="color:#6B778C; margin-left:5%;">学歴</a>
                             <a href="./publication" style="color:#6B778C; margin-left:5%;">出版物</a>
-                            <a href="./socialevent" style="color:#6B778C; margin-left:5%;">参加学会</a>
+                            <a href="./socialevent" style="color:#2E77FD; margin-left:5%;" class="font-weight-bold">参加学会</a>
                         </div>
 
                         <div class="container">

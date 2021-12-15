@@ -35,7 +35,7 @@
             <div class="col-md-8">
                 <div class="card text-center">
                     <div class="card-header">
-                        <a href="#">回答募集中</a>
+                        <a href="{{ route('questions.index') }}">回答募集中</a>
                     </div>
 
                     <div class="card-header">
@@ -55,14 +55,14 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-md-2">
+            {{-- <div class="col-md-2">
                 <a href="{{ route('posts.create') }}" class="btn btn-primary">投稿</a>
 
             </div>
             <div class="col-md-2">
                 <a href="{{ route('questions.create') }}" class="btn btn-primary">質問</a>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 
