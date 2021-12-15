@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     @foreach ($educations as $education)
-                                    <div class="card card text-left" style="margin-bottom:40px;">
+                                    <div class="card text-left" style="margin-bottom:40px;">
 
                                         <div class="card-body">
                                             <div class="form-group">
@@ -81,7 +81,7 @@
                                                 rows="10" class="border" style="background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary"
-                                            style="background-color:#2E77FD;color:white;">更新する</button>
+                                            style="background-color:#2E77FD;color:white;">追加する</button>
 
                                     </form>
                                 </div>
