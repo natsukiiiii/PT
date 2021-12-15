@@ -24,7 +24,7 @@
                     {{-- <label>Title</label> --}}
                     <input class=""
                     style="padding: 7px 0;
-                margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:16px; border-radius:8px;" type="text" class="form-control" value="{{ $post->title }}" name="title">
+                margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:24px; border-radius:8px;" type="text" class="form-control" value="{{ $post->title }}" name="title">
                 </div>
                 <div class="form-group">
                     {{-- <label>Details</label> --}}

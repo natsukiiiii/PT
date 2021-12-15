@@ -51,7 +51,7 @@
                         </a> --}}
                         <p class="card-text">{{ $post->user->name }}</p>
 
-                        <p class="card-text">投稿日時: {{ $post->created_at }}に投稿</p>
+                        <p class="card-text">投稿日時: {{ $post->created_at->format('Y年m月d日') }}に投稿</p>
                         <h5 class="card-title" style="font-size: 34px">title:{{ $post->title }}</h5>
                         <p class="card-text">本文:{{ $post->text }}</p>
 
