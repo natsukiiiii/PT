@@ -1,5 +1,9 @@
 @extends('layouts.app')
+<body class="bg-white">
 @section('content')
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,20 +16,25 @@
                     </ul>
                 </div>
             @endif
+            <div class="text-center">
             <form action="{{ route('posts.update', $post->id) }}" method="POST">
             {{csrf_field()}}
             {{method_field('PATCH')}}
                 <div class="form-group">
-                    <label>タイトル</label>
-                    <input type="text" class="form-control" value="{{ $post->title }}" name="title">
+                    {{-- <label>Title</label> --}}
+                    <input class=""
+                    style="padding: 7px 0;
+                margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:16px; border-radius:8px;" type="text" class="form-control" value="{{ $post->title }}" name="title">
                 </div>
                 <div class="form-group">
-                    <label>内容</label>
-                    <textarea class="form-control" rows="5" name="text">{{ $post->text }}</textarea>
+                    {{-- <label>Details</label> --}}
+                    <textarea style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;" class="form-control" rows="5" name="text">{{ $post->text }}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">更新する</button>
+                <button style="margin-top:40px; background-color:#2E77FD;color:white;" type="submit" class="btn btn-primary">更新する</button>
             </form>
+            </div>
         </div>
     </div>
 </div>
 @endsection
+</body>
