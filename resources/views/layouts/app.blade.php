@@ -1,5 +1,5 @@
 <!doctype html>
-{{-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> --}}
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -63,10 +63,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
+                            @if(Auth::check())
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 投稿 / 質問 <span class="caret"></span>
                             </a>
+                            @endif
                             {{-- プルダウンの表示設定 --}}
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('posts.create') }}"

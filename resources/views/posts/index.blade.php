@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-white">
     @section('content')
                                 {{-- <form class="form-inline my-2 my-lg-0 ml-2" action="{{ route('posts.index') }}">
                                         <div class="form-group">
@@ -30,42 +30,46 @@
                                         </div>
                                     </form>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card text-center">
                     <div class="card-header">
-                        <a href="#">回答募集中</a>
+                        <a href="{{ route('questions.index') }}">!! 回答募集中 !!</a>
                     </div>
 
-                    <div class="card-header">
-                        投稿一覧表示する
+                    <div class="card-body">
+                        <p style="margin-bottom: 40px;" class="text-left font-weight-bold">投稿一覧表示する</p>
+
                     </div>
                     @foreach ($posts as $post)
+                    <div class="card text-center">
+
                     <div class="card-body">
                         {{-- <a href="{{ route('posts.show', ['post' => $post]) }}">
                             {{ $post->name }}
                         </a> --}}
-                        <h5 class="card-title">タイトル:{{ $post->title }}</h5>
-                        <p class="card-text">本文:{{ $post->text }}</p>
-                        <p class="card-text">投稿者:{{ $post->user->name }}</p>
+                        <p class="card-text">{{ $post->user->name }}</p>
 
-                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細</a>
+                        <p class="card-text">投稿日時: {{ $post->created_at }}に投稿</p>
+                        <h5 class="card-title" style="font-size: 34px">title:{{ $post->title }}</h5>
+                        <p class="card-text">本文:{{ $post->text }}</p>
+
+                        <a href="{{ route('posts.show', $post->id) }}" style="background-color:#2E77FD;color:white;" class="btn btn-primary">詳細</a>
                         </div>
-                        <div class="card-footer text-muted">
-                            投稿日時: {{ $post->created_at }}に投稿
-                        </div>
+                    </div>
+
                     @endforeach
                 </div>
             </div>
-            <div class="col-md-2">
+            {{-- <div class="col-md-2">
                 <a href="{{ route('posts.create') }}" class="btn btn-primary">投稿</a>
 
             </div>
             <div class="col-md-2">
                 <a href="{{ route('questions.create') }}" class="btn btn-primary">質問</a>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 
