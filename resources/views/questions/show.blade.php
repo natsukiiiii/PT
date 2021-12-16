@@ -5,13 +5,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card-body">
+            <div class="card-title">
                 <h5 style="margin-top:40px; font-size:24px;"
                 class="text-left font-weight-bold">{{ $question->title }}</h5>
             </div>
             <div class="card-body">
-                <p class="card-text">{{ $question->text }}</p>
-                <p style="font-size: 14px;">投稿日時：{{ $question->created_at->format('Y年m月d日') }}</p>
+                <p class="text-left" style="margin:20px 0 40px 0;" >{{ $question->text }}</p>
+                <h5 class="text-left" style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</h5>
+
+                <p class="text-left" style="color:#6B778C; font-size: 10px;">{{ $question->created_at->format('Y年m月d日') }}</p>
 
                 <div class="text-right">
                     @if(Auth::id() === $question->user_id)
@@ -49,10 +51,11 @@
         <div class="col-md-8">
             @foreach ($question->questionsComments as $questionsComment)
             <div class="card mt-3" style="margin-bottom:40px;">
-                <h5 class="card-body" style="color:#6B778C;">投稿者：{{ $questionsComment->user->name }}</h5>
                 <div class="card-body">
-                    <p class="card-text">内容：{{ $questionsComment->text }}</p>
-                    <h5 class="card-title" style="color:#6B778C; font-size: 14px;">投稿日時：{{ $questionsComment->created_at->format('Y年m月d日') }}</h5>
+                    <p class="card-text">{{ $questionsComment->text }}</p>
+                <h5 style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</h5>
+
+                    <p class="card-title" style="color:#6B778C; font-size: 10px;">{{ $questionsComment->created_at->format('Y年m月d日') }}</p>
 
                 </div>
             </div>
