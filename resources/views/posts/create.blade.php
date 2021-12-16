@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
                                 <textarea
                                     style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
-                                    
+
 ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" name="text">
                     </textarea>
                             </div>
@@ -50,7 +51,7 @@ ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="
 
                         </form>
                     </div>
-                    <a href="#" style="color:#6B778C;">いい記事を書くには？</a>
+                    <a href="#" style="color:#6B778C;">いい記事を書くには？<i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
