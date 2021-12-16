@@ -94,6 +94,24 @@
                     </ul>
                 </div>
 
+                {{-- 解答募集中　プルダウン --}}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            @if(Auth::check())
+                             <a style="color:#6B778C;" href="{{ route('questions.index') }}">回答募集中 <i class="fas fa-school"></i></a>
+                            @endif
+                            @csrf
+                            <span class="caret"></span>
+                        </a>
+                    </ul>
+                </div>
+
+
+
 
                 {{-- ナブバーログイン、ログアウト --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

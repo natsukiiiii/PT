@@ -38,9 +38,7 @@
 
                     </div>
                 </form>
-
-    <div class="container">
-        <div class="row justify-content-center">
+            </div>
             <div class="col-md-8">
                 <h5 style="margin:40px 0 40px 0; font-size:24px;"
 class="text-left font-weight-bold"> 質問一覧</h5>

@@ -40,13 +40,15 @@
 
                     </div>
                 </form>
+            </div>
+            <div class="col-md-8">
 
 
                 <h5 style="margin:40px 0 40px 0; font-size:24px;" class="text-left font-weight-bold"> 投稿一覧</h5>
                 <div class="text-left">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <a href="{{ route('questions.index') }}">!! 回答募集中 !!</a>
-                    </div>
+                    </div> --}}
                     @foreach ($posts as $post)
 
 
@@ -67,6 +69,7 @@
                     @endforeach
                 </div>
             </div>
+
             {{-- <div class="col-md-2">
                 <a href="{{ route('posts.create') }}" class="btn btn-primary">投稿</a>
 
