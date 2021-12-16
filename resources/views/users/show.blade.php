@@ -37,9 +37,9 @@
 
 
                             @if ($user->image_path == null)
-                        <img src="{{ asset('assets/images/noImege.png') }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="">
+                        <img src="{{ asset('assets/images/noImege.png') }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="{{ $user->image_path }}">
                         @else
-                        <img src="{{ $user->image_path }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="">
+                        <img src="{{ $user->image_path }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="{{ $user->image_path }}">
                         @endif
 
 

@@ -115,7 +115,10 @@ class ProfileController extends Controller
 
         // if ($image = $user->file('image')) {
         // if ($image = $user->find('image')) {
+            //ここで$user->fileでfileが使えない.が、dd($image)で画像は取得できており、cloudinaryにも保存はできていた。
+            //  DBに保存されている。value保持できており、追加で画像表示させることで解決。
         if ($image = $user->image) {
+            // dd($image);
 
             $image_path = $image->getRealPath();
             Cloudder::upload($image_path, null);
