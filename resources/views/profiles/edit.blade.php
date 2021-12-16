@@ -105,7 +105,7 @@
                                     placeholder="ユーザー名だけ入力" name="instagram_url">
 
                             </div>
-                            <button type="submit" class="btn btn-primary">更新する</button>
+                            <button type="submit" class="btn btn-primary" style="background-color:#2E77FD;color:white;">更新する</button>
 
                         </form>
                     </div>

@@ -33,7 +33,15 @@
                     <div class="card-body">
 
                         <div class="form-group text-left">
-                            <img style="color:#6B778C;" src="{{ $user->image_path }}" alt="画像">
+                            {{-- <img style="color:#6B778C;" src="{{ $user->image_path }}" alt="画像"> --}}
+
+
+                            @if ($user->image_path == null)
+                        <img src="{{ asset('assets/images/noImege.png') }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="">
+                        @else
+                        <img src="{{ $user->image_path }}" class="rounded-circle img-thumbnail mb-3" width="150px" height="150px" alt="">
+                        @endif
+
 
                             <div class="form-group" style="color:#6B778C;">表示名 : {{ $profileUser->name }}</div>
                             <div class="form-group" style="color:#6B778C;">職業名 : {{ $user->specialized }}</div>
