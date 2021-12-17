@@ -46,8 +46,8 @@
                             aria-haspopup="true" aria-expanded="false" v-pre>
 
                             @if(Auth::check())
-                             <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">profile <i
-                                    class="fas fa-user-circle fa-lg"> </i> </a>
+                             <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}"><i
+                                class="fas fa-user-circle fa-lg"> </i> profile </a>
                             @endif
                             @csrf
                             <span class="caret"></span>
@@ -102,7 +102,7 @@
                             aria-haspopup="true" aria-expanded="false" v-pre>
 
                             @if(Auth::check())
-                             <a style="color:#6B778C;" href="{{ route('questions.index') }}">回答募集中 <i class="fas fa-school"></i></a>
+                             <a style="color:#6B778C;" href="{{ route('questions.index') }}"><i class="fas fa-school"></i>  回答募集中 </a>
                             @endif
                             @csrf
                             <span class="caret"></span>
@@ -149,6 +149,16 @@
                                     style="display: none;">
                                     @csrf
                                 </form>
+
+                                {{-- <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form> --}}
                             </div>
                         </li>
                         @endguest
