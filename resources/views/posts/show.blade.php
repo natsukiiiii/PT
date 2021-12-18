@@ -22,13 +22,17 @@
                             <form action="{{route('posts.destroy', $post->id)}}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="submit" value="削除" style="    margin-left: 10px;" class="btn btn-light border"
-                                    onclick='return confirm("本当に削除しますか？？")'>
+                                <button class="border-0 bg-transparent h3 text-secondary">
+                                    <i class="far fa-trash-alt">
+                                        <input type='submit' value='' class="d-none" style=""
+                                        onclick='return confirm("削除しますか？？");'>
+                                    </i>
+                                 </button>
                             </form>
                         </div>
-                        <div class="d-inline">
-                            <a href="{{route('posts.edit', $post->id)}}" class="btn"
-                                style="background-color:#2E77FD;color:white;">編集</a>
+                        <div class="d-inline mr-2">
+                            <a href="{{route('posts.edit', $post->id)}}"   style="font-size:120%;" class="btn bg-transparent  text-secondary"
+                                ><i class="fas fa-pen"></i></a>
 
                         </div>
 

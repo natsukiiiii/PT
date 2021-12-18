@@ -40,19 +40,25 @@
                                             <div class="form-group">
 
                                                 <h5 class="card-title">{{ $education->name }}</h5>
-                                                {{-- 編集ボタン --}}
-                                                <div class="text-right">
-                                                    <a href="{{ route('education.edit', $education->id) }}" class="btn btn-primary"
-                                                        style="background-color:#2E77FD;color:white;">編集</a>
-                                                </div>
-                                                {{-- 編集ボタン --}}
-                                                <div class="text-right">
+                                                <div class="d-flex flex-row-reverse">
+                                                {{-- 削除ボタン --}}
+                                                <div class="text-right d-inline">
                                                     <form action=' {{ route('education.destroy', $education->id) }}' method='post'>
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <input type='submit' value='削除' class="btn btn-light"
-                                                            onclick='return confirm("削除しますか？？");'>
+                                                        <button class="border-0 bg-transparent h3 text-secondary">
+                                                            <i class="far fa-trash-alt">
+                                                                <input type='submit' value='' class="d-none" style=""
+                                                                onclick='return confirm("削除しますか？？");'>
+                                                            </i>
+                                                         </button>
                                                     </form>
+                                                </div>
+                                                {{-- 編集ボタン --}}
+                                                <div class="text-right d-inline mr-2">
+                                                    <a href="{{ route('education.edit', $education->id) }}" style="font-size:120%;" class="btn bg-transparent  text-secondary"><i class="fas fa-pen"></i></a>
+
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
