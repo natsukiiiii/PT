@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PT</title>
 </head>
 <body class="bg-white">
     @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <form class="mb-2 mt-4 text-center" method="GET" action="{{ route('posts.index') }}">
+                <form class="mb-2 mt-4 text-center" method="GET" action="{{ route('questions.index') }}">
                     <div>
                         <input style="padding: 0.72em 1.3em;
                     border-radius: 2.5em;
@@ -30,7 +30,7 @@
                             <button style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
                                 class="btn btn-info my-2" type="submit">検索</button>
                             <button class="btn btn-light my-2 ml-5">
-                                <a href="{{ route('posts.index') }}" style="color:#6B778C;">クリア</a>
+                                <a href="{{ route('questions.index') }}" style="color:#6B778C;">クリア</a>
                             </button>
                         </div>
 
@@ -52,7 +52,7 @@ class="text-left font-weight-bold"> 質問一覧</h5>
 
 
                         <a href="{{ route('questions.show', $question->id) }}" style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
-                            class="btn btn-primary">詳細</a>
+                            class="btn btn-primary">質問へ回答する</a>
                         <p class="card-text" style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</p>
 
                             <p class="card-title" style="color:#6B778C; font-size: 10px;"> {{ $question->created_at->format('Y年m月d日') }}に投稿</p>
@@ -69,6 +69,9 @@ class="text-left font-weight-bold"> 質問一覧</h5>
 
             </div> --}}
         </div>
+    </div>
+    <div style="margin-left: 44%;">
+        {{ $questions->appends(request()->input())->links() }}
     </div>
 
     @endsection
