@@ -17,16 +17,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <form class="mb-2 mt-4 text-center" method="GET" action="{{ route('posts.index') }}">
+                <form style="position: relative;" class="mb-2 mt-4 text-center" method="GET" action="{{ route('posts.index') }}">
                     <div>
-                        <input style="padding: 0.72em 1.3em;
+                        <input style="width:100%; padding: 0.72em 1.3em;
                     border-radius: 2.5em;
-                    margin: 0 auto; background-color:#f1f5f9; transition: .2s; border: 1px solid #0000; position: relative;"
-                            class="form-control my-2 mr-5" type="search" placeholder=" キーワードを入力..." name="search"
+                    margin: 0 auto; background-color:#f1f5f9; transition: .2s; border: 1px solid #0000;"
+                            class="form-control my-2 mr-5 " type="search" placeholder=" キーワードを入力..." name="search"
                             value="@if (isset($search)) {{ $search }} @endif">
-                        <div class="text-right" style="position: relative; top:-33px; left:-46px; color:#6B778C;">
-                            <i class="fas fa-search"></i>
+                        <div class="text-right" style="">
+                        {{-- <div class="text-right" style="position: relative;  transform: translate(10px) ;width:10%;"> --}}
 
+
+
+                            <button  style="color:#6B778C; border:none; background:none; position: absolute;top: 10px;
+                            right: 35px;"><i class="fas fa-search" type="submit"></i></button>
                         </div>
                         <div>
                             <button style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
