@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Parsedown;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,8 @@ class AppServiceProvider extends ServiceProvider
             return $Parsedown->text($markdown);
 
         });
-        Schema::defaultStringLength(191);
+        // Paginator::defaultView('index');
+
+        // Paginator::defaultSimpleView('index');
     }
 }
