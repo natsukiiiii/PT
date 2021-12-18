@@ -70,8 +70,11 @@ class="text-left font-weight-bold"> 質問一覧</h5>
             </div> --}}
         </div>
     </div>
-    <div style="margin-left: 44%;">
+    <div class="row justify-content-center">
+        <div style="margin-left:30px;" class="col-md-auto">
+
         {{ $questions->appends(request()->input())->links() }}
+    </div>
     </div>
 
     @endsection
