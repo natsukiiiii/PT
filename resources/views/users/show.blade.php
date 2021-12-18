@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PT</title>
 </head>
 
 <body class="bg-white">
@@ -22,11 +22,11 @@
                     <div class="card-body" >
                         <h3 style="margin:40px 0 40px 0;font-size:34px;" class="text-left font-weight-bold">Profile</h3>
                         <div class="form-group text-left" style="border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
-                            <a href="{{ route('profile.edit', Auth::id()) }}" style="color:#6B778C;" class="font-weight-bold">プロフィール</a>
-                            <a href="{{ route('experience.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;">経験分野</a>
-                            <a href="{{ route('education.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;" >学歴</a>
-                            <a href="{{ route('publication.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;">出版物</a>
-                            <a href="{{ route('socialevent.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;">参加学会</a>
+                            <a href="{{ route('profile.edit', Auth::id()) }}" style="color:#6B778C;" class="font-weight-bold"><i class="fas fa-pen-fancy"></i> プロフィール</a>
+                            <a href="{{ route('experience.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;"><i class="fas fa-pen-fancy"></i> 経験分野</a>
+                            <a href="{{ route('education.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;" ><i class="fas fa-pen-fancy"></i> 学歴</a>
+                            <a href="{{ route('publication.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;"><i class="fas fa-pen-fancy"></i> 出版物</a>
+                            <a href="{{ route('socialevent.index', Auth::id()) }}" style="color:#6B778C; margin-left:5%;"><i class="fas fa-pen-fancy"></i> 参加学会</a>
                         </div>
                     </div>
 
@@ -52,9 +52,9 @@
                             {{-- <div>Following</div>
                             <div>Followers</div>
                             <div>現在地</div> --}}
-                            <div class="form-group" style="color:#6B778C;">twitter :  <a href="https://twitter.com/{{ $user->twitter_url }}">Twitter</a> </div>
-                            <div class="form-group" style="color:#6B778C;">Facebook : <a href="https://www.facebook.com/{{ $user->facebook_url }}">Facebook</a></div>
-                            <div class="form-group" style="color:#6B778C;">Instagram : <a href="https://www.instagram.com/{{ $user->instagram_url }}">Instagram</a></div>
+                            <div class="form-group" style="color:#6B778C;">twitter :  <a href="https://twitter.com/{{ $user->twitter_url }}" target="_blank">Twitter</a> </div>
+                            <div class="form-group" style="color:#6B778C;">Facebook : <a href="https://www.facebook.com/{{ $user->facebook_url }} " target="_blank">Facebook</a></div>
+                            <div class="form-group" style="color:#6B778C;">Instagram : <a href="https://www.instagram.com/{{ $user->instagram_url }}" target="_blank">Instagram</a></div>
 
                             {{-- <div>medical societies　所属？</div> --}}
 

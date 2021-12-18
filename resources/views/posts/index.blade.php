@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PT</title>
 </head>
 
 <body class="bg-white">
@@ -58,7 +58,7 @@
                         <p class="card-text" style="margin:20px 0 40px 0;">{{ $post->text }}</p>
                         <a href="{{ route('posts.show', $post->id) }}"
                             style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
-                            class="btn btn-primary">詳細</a>
+                            class="btn btn-primary">投稿へコメントする</a>
 
                         <p class="card-text" style="color:#6B778C; font-size: 12px;">{{ $post->user->name }}</p>
                         <p class="card-text" style="color:#6B778C; font-size: 10px;">

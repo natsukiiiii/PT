@@ -24,7 +24,7 @@
                             <form action="{{route('questions.destroy', $question->id)}}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="submit" value="削除" class="btn btn-light border"
+                                <input type="submit" value="削除" style="    margin-left: 10px;" class="btn btn-light border"
                                     onclick='return confirm("本当に削除しますか？？")'>
                             </form>
                         </div>
