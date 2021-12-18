@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PT</title>
 </head>
 
 <body class="bg-white">
@@ -28,7 +28,7 @@
                             @csrf
                             {{method_field('PATCH')}}
                             <div class="form-group text-left" style="border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
-                                <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">プロフィール情報</a>
+                                {{-- <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}">プロフィール情報</a> --}}
                                 <a style="color:#6B778C; margin-left:5%; font-size:1em;" href="./edit">プロフィール</a>
                                 <a style="color:#6B778C; margin-left:5%; font-size:1em;"
                                     href="../../experience">経験分野</a>

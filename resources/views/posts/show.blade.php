@@ -22,7 +22,7 @@
                             <form action="{{route('posts.destroy', $post->id)}}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="submit" value="削除" class="btn btn-light border"
+                                <input type="submit" value="削除" style="    margin-left: 10px;" class="btn btn-light border"
                                     onclick='return confirm("本当に削除しますか？？")'>
                             </form>
                         </div>
@@ -51,7 +51,7 @@
                             class="form-control" placeholder="質問の回答を記入します" rows="5" name="text"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary"
-                        style="margin:0 0 40px 0; background-color:#2E77FD;color:white;">回答する</button>
+                        style="margin:0 0 40px 0; background-color:#2E77FD;color:white;">コメントする</button>
                 </form>
             </div>
         </div>
