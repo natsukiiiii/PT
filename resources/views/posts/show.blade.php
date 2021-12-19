@@ -51,8 +51,8 @@
                     <div class="form-group">
                         {{-- <label style="color:#6B778C;">コメント</label> --}}
                         <textarea
-                            style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
-                            class="form-control" placeholder="質問の回答を記入します" rows="5" name="text"></textarea>
+                        name="text" style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
+                            class="form-control" placeholder="質問の回答を記入します" rows="5" >{{ old('text') }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary"
                         style="margin:0 0 40px 0; background-color:#2E77FD;color:white;">コメントする</button>

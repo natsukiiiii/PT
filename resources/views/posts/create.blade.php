@@ -33,17 +33,17 @@
                         <form action="{{ route('posts.store') }}" method="post">
                             {{csrf_field()}}
                             <div class="form-group" style="border: none;">
-                                <input class=""
+                                <input name="title" value="{{ old('title') }}" class=""
                                     style="padding: 7px 0;
                                 margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:28px; border-radius:8px;"
-                                    type="text" value="" placeholder="Title" name="title">
+                                    type="text" value="" placeholder="Title" >
                                 　　 </div>
                             <div class="form-group">
-                                <textarea
+                                <textarea name="text"
                                     style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
-ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" name="text">
+ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" >{{ old('text') }}
                     </textarea>
                             </div>
                             <button style="margin-top:40px; background-color:#2E77FD;color:white;" type="submit"
