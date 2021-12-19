@@ -40,5 +40,9 @@ class AppServiceProvider extends ServiceProvider
         // Paginator::defaultView('index');
 
         // Paginator::defaultSimpleView('index');
+        if ($this->app->environment() === 'production') {
+            \URL::forceScheme('https');
+        }
+        Schema::defaultStringLength(191);
     }
 }
