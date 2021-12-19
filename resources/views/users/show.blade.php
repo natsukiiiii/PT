@@ -52,9 +52,26 @@
                             {{-- <div>Following</div>
                             <div>Followers</div>
                             <div>現在地</div> --}}
+                            @if($user->twitter_url == null)
+                            <div class="form-group" style="color:#6B778C;">twitter :  </div>
+                            @else
                             <div class="form-group" style="color:#6B778C;">twitter :  <a href="https://twitter.com/{{ $user->twitter_url }}" target="_blank">Twitter</a> </div>
-                            <div class="form-group" style="color:#6B778C;">Facebook : <a href="https://www.facebook.com/{{ $user->facebook_url }} " target="_blank">Facebook</a></div>
-                            <div class="form-group" style="color:#6B778C;">Instagram : <a href="https://www.instagram.com/{{ $user->instagram_url }}" target="_blank">Instagram</a></div>
+                           @endif
+
+                           @if($user->facebook_url == null)
+                           <div class="form-group" style="color:#6B778C;">Facebook :  </div>
+                           @else
+                           <div class="form-group" style="color:#6B778C;">Facebook : <a href="https://www.facebook.com/{{ $user->facebook_url }} " target="_blank">Facebook</a></div>
+
+                          @endif
+
+                          @if($user->instagram_url == null)
+                          <div class="form-group" style="color:#6B778C;">Instagram :  </div>
+                          @else
+                          <div class="form-group" style="color:#6B778C;">Instagram : <a href="https://www.instagram.com/{{ $user->instagram_url }}" target="_blank">Instagram</a></div>
+
+                         @endif
+
 
                             {{-- <div>medical societies　所属？</div> --}}
 
