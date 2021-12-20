@@ -52491,6 +52491,9 @@ $(function () {
     var html = Object(marked__WEBPACK_IMPORTED_MODULE_0__["marked"])($(this).val());
     $('#markdown_preview').html(html);
   });
+  var target = $('.text');
+  var html = Object(marked__WEBPACK_IMPORTED_MODULE_0__["marked"])(target.html());
+  $('.text').html(html);
 });
 
 /***/ }),
