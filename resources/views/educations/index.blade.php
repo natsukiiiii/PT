@@ -84,7 +84,7 @@
                                             <p class="text-left" style="margin-bottom:40px;">あなたの学校のネットワークにいる卒業生を見つけて、つながりましょう。
                                             </p>
                                             <textarea name="name" value="" placeholder="ex) OO大学, OO学部" cols="68"
-                                                rows="10" class="border" style="background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
+                                                rows="10" class="border" style="padding: 2.5rem 3.3rem; background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary"
                                             style="background-color:#2E77FD;color:white;">追加する</button>

@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     {{-- <label>内容</label> --}}
-                    <textarea style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"  class="form-control" rows="5" name="text">{{ $question->text }}</textarea>
+                    <textarea style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"  class="form-control" rows="5" name="text">{{ $question->text }}</textarea>
                 </div>
                 <button style="margin-top:40px; background-color:#2E77FD;color:white;" type="submit" class="btn btn-primary">更新する</button>
             </form>

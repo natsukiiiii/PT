@@ -64,8 +64,8 @@
                             style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
                             class="btn btn-primary">投稿へコメントする</a>
 
-                        <p class="card-text" style="color:#6B778C; font-size: 12px;">{{ $post->user->name }}</p>
-                        <p class="card-text" style="color:#6B778C; font-size: 10px;">
+                        <p class="card-text" style="color:#6B778C; font-size: 14px;">{{ $post->user->name }}</p>
+                        <p class="card-text" style="color:#6B778C; font-size: 14px;">
                             {{ $post->created_at->format('Y年m月d日') }}に投稿</p>
 
                     </div>

@@ -40,7 +40,7 @@
                                 　　 </div>
                             <div class="form-group">
                                 <textarea name="text"
-                                    style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
+                                    style="border: none; width:100%; border-radius:8px;  c  box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
 ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" >{{ old('text') }}
