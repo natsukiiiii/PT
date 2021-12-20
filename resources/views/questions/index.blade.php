@@ -54,9 +54,9 @@ class="text-left font-weight-bold"> 質問一覧</h5>
 
                         <a href="{{ route('questions.show', $question->id) }}" style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
                             class="btn btn-primary">質問へ回答する</a>
-                        <p class="card-text" style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</p>
+                        <p class="card-text" style="color:#6B778C; font-size: 14px;">{{ $question->user->name }}</p>
 
-                            <p class="card-title" style="color:#6B778C; font-size: 10px;"> {{ $question->created_at->format('Y年m月d日') }}に投稿</p>
+                            <p class="card-title" style="color:#6B778C; font-size: 14px;"> {{ $question->created_at->format('Y年m月d日') }}に投稿</p>
                         </div>
                     @endforeach
                 </div>

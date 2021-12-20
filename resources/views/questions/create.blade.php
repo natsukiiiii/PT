@@ -39,7 +39,7 @@
                             type="text" value="" placeholder="Title" >
                                 　　 </div>
                             <div class="form-group">
-                                <textarea name="text" style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
+                                <textarea name="text" style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
                                 class="form-control " placeholder="
 治療や知見に関する質問をしてみましょう。
 新しい可能性が見つかります。

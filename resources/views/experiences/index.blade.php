@@ -107,7 +107,7 @@
                                         <p  class="text-left" style="margin-bottom:40px;">あなたの経験を加える.
                                             同僚を見つけてつながる</p>
                                         <textarea name="name" value="" placeholder="　ex) OO大学病院, リハビリテーション科、整形外来"
-                                            cols="68" rows="10" class="border" style="background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
+                                            cols="68" rows="10" class="border" style="padding: 2.5rem 3.3rem; background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
                                     </div>
                                     <button type="submit" class="btn" style="background-color:#2E77FD;color:white;">追加する</button>
 

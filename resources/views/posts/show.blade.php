@@ -11,9 +11,9 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">{{ $post->text }}</p>
-                    <h5 class="text-left" style="color:#6B778C; font-size: 12px;">{{ $post->user->name }}</h5>
+                    <h5 class="text-left" style="color:#6B778C; font-size: 14px;">{{ $post->user->name }}</h5>
 
-                    <p style="color:#6B778C; font-size: 10px;">{{ $post->created_at->format('Y年m月d日') }}</p>
+                    <p style="color:#6B778C; font-size: 14px;">{{ $post->created_at->format('Y年m月d日') }}</p>
 
                     <div class="d-flex flex-row-reverse">
                         {{-- <div class="text-right"> --}}
@@ -51,7 +51,7 @@
                     <div class="form-group">
                         {{-- <label style="color:#6B778C;">コメント</label> --}}
                         <textarea
-                        name="text" style="border: none; width:100%; border-radius:8px; padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;"
+                        name="text" style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
                             class="form-control" placeholder="質問の回答を記入します" rows="5" >{{ old('text') }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary"

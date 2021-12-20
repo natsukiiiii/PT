@@ -90,7 +90,7 @@
                                     </p>
                                     <textarea name="name" value="" placeholder="ex) PT学会、足底板" cols="68" rows="10"
                                         class="border"
-                                        style="background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
+                                        style="padding: 2.5rem 3.3rem; background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>
                                 </div>
                                 <button type="submit" class="btn"
                                     style="background-color:#2E77FD;color:white;">追加する</button>

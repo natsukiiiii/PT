@@ -12,9 +12,9 @@
                 </div>
                 <div class="card-body">
                     <p class="text-left" style="margin:20px 0 40px 0;">{{ $question->text }}</p>
-                    <h5 class="text-left" style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</h5>
+                    <h5 class="text-left" style="color:#6B778C; font-size: 14px;">{{ $question->user->name }}</h5>
 
-                    <p class="text-left" style="color:#6B778C; font-size: 10px;">
+                    <p class="text-left" style="color:#6B778C; font-size: 14px;">
                         {{ $question->created_at->format('Y年m月d日') }}</p>
 
                     <div class="d-flex flex-row-reverse">
@@ -52,7 +52,7 @@
                     <div class="form-group">
                         {{-- <label style="color:#6B778C;">コメント</label> --}}
                         <textarea name="text" style="border: none; width:100%; border-radius:8px;
-                    padding: 0.5rem 1.3rem;  box-shadow:0px 1px 41px -23px;" class="form-control"
+                     padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;" class="form-control"
                             placeholder="質問の回答を記入します" rows="5" >{{ old('text') }}</textarea>
                     </div>
                     <button style="margin:0 0 40px 0; background-color:#2E77FD;color:white;" type="submit"
@@ -66,9 +66,9 @@
                 <div class="card mt-3" style="margin-bottom:40px;">
                     <div class="card-body">
                         <p class="card-text">{{ $questionsComment->text }}</p>
-                        <h5 style="color:#6B778C; font-size: 12px;">{{ $question->user->name }}</h5>
+                        <h5 style="color:#6B778C; font-size: 14px;">{{ $question->user->name }}</h5>
 
-                        <p class="card-title" style="color:#6B778C; font-size: 10px;">
+                        <p class="card-title" style="color:#6B778C; font-size: 14px;">
                             {{ $questionsComment->created_at->format('Y年m月d日') }}</p>
 
                     </div>
