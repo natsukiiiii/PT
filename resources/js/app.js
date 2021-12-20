@@ -39,4 +39,11 @@ $(function () {
       var html = marked($(this).val());
       $('#markdown_preview').html(html);
     });
+
+    var target = $('.text')
+    var html = marked(target.html());
+    $('.text').html(html);
+
+
+
   });

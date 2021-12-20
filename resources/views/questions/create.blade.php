@@ -48,7 +48,7 @@
 
 
 
-<div class="row">
+<div class="row" >
             {{-- START入力 --}}
                 <div class="text-center col-md-6">
                     <div class="card-body">
@@ -79,7 +79,7 @@ ex)肩関節周囲炎が凍結肩に移行し治療が難航しているので�
                     <div class="card-body">
                         
                             <div class="form-group" id="markdown_preview" style=" padding: 1rem;
-                            height: 29rem; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
+                            height: 34rem; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
                                 
                             </div>
                            

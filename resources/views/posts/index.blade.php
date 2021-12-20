@@ -9,6 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{{ asset('../../js/app.js') }}"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
     <title>PT</title>
 </head>
 
@@ -59,7 +64,7 @@
                     <div class="card-body"
                         style="margin-bottom:40px;  border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
                         <h5 style="font-size:16px;" class="card-title font-weight-bold">{{ $post->title }}</h5>
-                        <p class="card-text" style="margin:20px 0 40px 0;">{{ $post->text }}</p>
+                        <p class="text card-text" style="margin:20px 0 40px 0;">{{ $post->text }}</p>
                         <a href="{{ route('posts.show', $post->id) }}"
                             style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
                             class="btn btn-primary">投稿へコメントする</a>
