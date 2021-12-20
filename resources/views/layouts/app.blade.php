@@ -173,7 +173,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="../../js/js/main.js"></script>
+    {{-- <script src="../../js/js/main.js"></script> --}}
 </body>
 
 </html>
