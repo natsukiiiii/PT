@@ -16,12 +16,7 @@
 //     }
 // })
 
-import mavonEditor from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
-Vue.use(window['mavon-editor'])
-var app = new Vue({
-    el: '#app'
-})
+
 
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
