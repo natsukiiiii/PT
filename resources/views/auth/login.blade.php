@@ -14,10 +14,12 @@
                 <p style="color:#6B778C; margin-bottom:20px;" class="text-center">Login your account</p>
 
                 <div class="form-group row">
-                    <div class="col-md-8 offset-md-4">
-                        <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px; " href="{{ url('login/twitter') }}"><i class="fab fa-twitter">Twitter</i></a>
-                        <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/facebook') }}"><i class="fab fa-facebook">Facebook</i></a>
-                        <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/google') }}"><i class="fab fa-google">Google</i></a>
+                    <div class="col-md-8 offset-md-3">
+                        {{-- <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px; " href="{{ url('login/twitter') }}"><i class="fab fa-twitter">Twitter</i></a> --}}
+                        {{-- <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/facebook') }}"><i class="fab fa-facebook">Facebook</i></a> --}}
+                        <a class="h6 " style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/google') }}"><i class="fab fa-google"> Login with Google</i></a>
+                        <a class="h6 "  style="background:#00b900;; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/line') }}"><i class="fab fa-line"> Login with Line</i></a>
+
                     
                     </div>
                 </div>

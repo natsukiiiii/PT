@@ -44,5 +44,10 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),  
         'redirect' => env('GOOGLE_CALLBACK_URL') . '/login/google/callback',
       ],
+      'line' => [    
+        'client_id' => env('LINE_CLIENT_ID'),  
+        'client_secret' => env('LINE_CLIENT_SECRET'),  
+        'redirect' => env('LINE_CALLBACK_URL') . '/login/line/callback',
+      ],
 
 ];
