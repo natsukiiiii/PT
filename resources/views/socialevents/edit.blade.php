@@ -32,6 +32,8 @@
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                                 <p class="text-left" style=" font-size:16px;color:#6B778C;">参加した学会を編集します。</p>
+                                <input  value="{{ $socialevent->date }}"　name="date" type="text" placeholder="参加日 ex) 2021/12/24" style="padding: 0.6em 0 0.6em 3.7em;
+                                line-height: 1.4; width:100%; background-color:#f1f5f9;" class="card my-3">
                                 <textarea class="border text-left" name="name"
                                 value="{{ $socialevent->name }}"
                                 placeholder="ex) OO大学病院, リハビリテーション科、整形外来"
