@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- <title>PT</title> --}}
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+ 
+        <meta property="og:url" content="https://pt-app1.herokuapp.com" />
+         
+        <meta property="og:type" content="website" />
+         
+        <meta property="og:title" content="治療化向けQ＆Aアプリ" />
+         
+        <meta property="og:description" content="治療化向けQ＆Aアプリ" />
+         
+        <meta property="og:site_name" content="PT" />
+         
+        <meta property="og:image" content="https://pt-app1.herokuapp.com/assets/images/toppage.png" />
+        <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
