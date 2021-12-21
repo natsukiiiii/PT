@@ -10,7 +10,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{ $post->text }}</p>
+                    <p class="text card-text">{{ $post->text }}</p>
                     <h5 class="text-left" style="color:#6B778C; font-size: 14px;">{{ $post->user->name }}</h5>
 
                     <p style="color:#6B778C; font-size: 14px;">{{ $post->created_at->format('Y年m月d日') }}</p>

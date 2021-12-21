@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="{{ asset('../../js/app.js') }}"></script>
+    {{-- <script src="{{ asset('../../js/app.js') }}"></script> --}}
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -53,7 +53,7 @@
                 <div class="text-center col-md-6">
                     <div class="card-body">
                             <div class="form-group">
-                                <textarea id="markdown_editor_textarea"　name="text" style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
+                                <textarea id="markdown_editor_textarea_post"　name="text" style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
 ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" > {{ old('text') }} </textarea>
@@ -70,7 +70,7 @@ ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="
  <div class="col-md-6">
     <div class="card-body">
         
-            <div class="form-group" id="markdown_preview" style=" padding: 1rem;
+            <div class="form-group" id="markdown_preview_post" style=" padding: 1rem;
             height: 34rem; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
                 
             </div>

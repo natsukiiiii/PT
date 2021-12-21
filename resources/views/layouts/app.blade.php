@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('../../css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false" v-pre>
+                            aria-haspopup="false" aria-expanded="false" v-pre>
 
                             @if(Auth::check())
                              <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}"><i
@@ -173,7 +173,7 @@
             @yield('content')
         </main>
     </div>
-    {{-- <script src="../../js/js/main.js"></script> --}}
+    <script src="../../js/js/main.js"></script>
 </body>
 
 </html>
