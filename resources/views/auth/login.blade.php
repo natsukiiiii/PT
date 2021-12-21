@@ -19,8 +19,6 @@
                         {{-- <a style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/facebook') }}"><i class="fab fa-facebook">Facebook</i></a> --}}
                         <a class="h6 " style="background:#2E77FD; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/google') }}"><i class="fab fa-google"> Login with Google</i></a>
                         <a class="h6 "  style="background:#00b900;; color:white; padding: 10px 8px; border-radius:6px; margin-left:10px;" href="{{ url('login/line') }}"><i class="fab fa-line"> Login with Line</i></a>
-
-                    
                     </div>
                 </div>
                 <p class="text-center" style="color:#6B778C;">OR</p>
