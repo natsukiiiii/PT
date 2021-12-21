@@ -11,7 +11,7 @@
                         {{ $question->title }}</h5>
                 </div>
                 <div class="card-body">
-                    <p class="text-left" style="margin:20px 0 40px 0;">{{ $question->text }}</p>
+                    <p class="text text-left" style="margin:20px 0 40px 0;">{{ $question->text }}</p>
                     <h5 class="text-left" style="color:#6B778C; font-size: 14px;">{{ $question->user->name }}</h5>
 
                     <p class="text-left" style="color:#6B778C; font-size: 14px;">

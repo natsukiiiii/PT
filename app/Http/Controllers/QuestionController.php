@@ -29,7 +29,7 @@ class QuestionController extends Controller
         // return view('questions.index', compact('questions'));
 
 
-        $questions = Question::paginate(2);
+        $questions = Question::orderBy('id', 'DESC')->paginate(2);
 // 検索フォームで入力された値を取得する
          $search = $request->input('search');
         // クエリビルダ

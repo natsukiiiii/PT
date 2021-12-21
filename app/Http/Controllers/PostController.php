@@ -25,7 +25,7 @@ class PostController extends Controller
 
         // return view('posts.index', compact('posts'));
 // ユーザー一覧をページネートで取得
-$posts = Post::paginate(20);
+$posts = Post::orderBy('id', 'DESC')->paginate(20);
 // 検索フォームで入力された値を取得する
          $search = $request->input('search');
         // クエリビルダ
@@ -48,6 +48,7 @@ $posts = Post::paginate(20);
 // 上記で取得した$queryをページネートにし、変数$usersに代入
 // getでも良い
             $posts = $query->paginate(20);
+            
         }
         $posts->load('user');
 // dd($search);
