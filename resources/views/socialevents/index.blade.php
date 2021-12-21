@@ -39,6 +39,7 @@
 
                                         <div class="card-body">
                                             <div class="form-group">
+                                                <h5 class="card-title">{{ $socialevent->date }}</h5>
 
                                                 <h5 class="card-title">{{ $socialevent->name }}</h5>
                                                 <div class="d-flex flex-row-reverse">
@@ -89,6 +90,8 @@
                                                 </p>
                                                 <p class="text-left" style="margin-bottom:40px;">参加した勉強や学会を追加しましょう。
                                                 </p>
+                                                <input value="" name="date" type="text" placeholder="参加日 ex) 2021/12/24" style="padding: 0.6em 0 0.6em 3.7em;
+                                                line-height: 1.4; width:100%; background-color:#f1f5f9;" class="card my-3">
                                                 <textarea name="name" value="" placeholder="ex) PT学会、足底板" cols="68"
                                                     rows="10" class="border"
                                                     style="padding: 2.5rem 3.3rem; background-color:#f1f5f9;border-radius: 6px; width: 100%;"></textarea>

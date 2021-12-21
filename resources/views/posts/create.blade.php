@@ -56,7 +56,7 @@
                                 <textarea id="markdown_editor_textarea_post"　name="text" style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
-ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" > {{ old('text') }} </textarea>
+ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" >{{ old('text') }}</textarea>
                             </div>
                             <button style="margin-top:40px; background-color:#2E77FD;color:white;" type="submit"
                                 class="btn btn-primary">投稿する</button>
