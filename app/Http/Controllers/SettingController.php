@@ -197,6 +197,10 @@ class SettingController extends Controller
     {
         $user = Auth::user();
         // $experience = Experience::get();
+        $user_id = Experience::get(['user_id']);
+        if(Auth::id() === $user_id){
+            return view('settings.experience', compact('user_id'));
+        }
 
         return view('settings.experience', compact('user', 'experience'));
     }
@@ -214,6 +218,11 @@ class SettingController extends Controller
         $user = Auth::user();
         // $experience = Experience::get();
 
+        $user_id = Education::get(['user_id']);
+        if(Auth::id() === $user_id){
+            return view('settings.education', compact('user_id'));
+        }
+
         return view('settings.education', compact('user', 'education'));
     }
 
@@ -227,6 +236,10 @@ class SettingController extends Controller
     {
         $user = Auth::user();
         // $experience = Experience::get();
+        $user_id = Publication::get(['user_id']);
+        if(Auth::id() === $user_id){
+            return view('settings.publication', compact('user_id'));
+        }
 
         return view('settings.publication', compact('user', 'publication'));
     }
@@ -241,6 +254,10 @@ class SettingController extends Controller
     {
         $user = Auth::user();
         // $experience = Experience::get();
+        $user_id = Socialevent::get(['user_id']);
+        if(Auth::id() === $user_id){
+            return view('settings.socialevent', compact('user_id'));
+        }
 
         return view('settings.socialevent', compact('user', 'socialevent'));
         // return view('settings.socialevent', compact('user', 'socialevent'));

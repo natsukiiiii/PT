@@ -84,7 +84,15 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($experience as $name)
+                {{-- @dd($user->id); --}}
+                {{-- @dd($user_id); --}}
+
+                {{-- @dd($user->id); --}}
+                {{-- @if($user->id === $user_id) --}}
+                
+
+                @foreach ($user->experience as $name)
+
                 <div class="card text-left" style="color:#6B778C;">
                     <div class="card-body">
                         <div class="form-group">
@@ -94,8 +102,9 @@
                     </div>
                 </div>
                 @endforeach
+                {{-- @endif --}}
 
-                @foreach ($education as $name)
+                @foreach ($user->education as $name)
                 <div class="card text-left" style="color:#6B778C;">
                     <div class="card-body">
                         <div class="form-group">
@@ -105,7 +114,7 @@
                 </div>
                 @endforeach
 
-                @foreach ($publication as $name)
+                @foreach ($user->publication as $name)
                 <div class="card text-left" style="color:#6B778C;">
                     <div class="card-body">
                         <div class="form-group">
@@ -115,7 +124,7 @@
                 </div>
                 @endforeach
 
-                @foreach ($socialevent as $name)
+                @foreach ($user->socialevent as $name)
                 <div class="card text-left" style="color:#6B778C;">
                     <div class="card-body">
                         <div class="form-group">
