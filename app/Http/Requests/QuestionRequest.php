@@ -24,7 +24,7 @@ class QuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|max:255',
             'text' => 'required',
         ];
     }
@@ -32,6 +32,7 @@ class QuestionRequest extends FormRequest
     {
     return [
         'title.required' => 'タイトルは必須です。',
+        'title.max'      => 'タイトルは255文字以内で記入してください。',
         'text.required'  => '内容は必須です。',
     ];
     }
