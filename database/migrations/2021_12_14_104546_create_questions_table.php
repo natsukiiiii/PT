@@ -19,7 +19,7 @@ class CreateQuestionsTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->string('title');
-            $table->string('text');
+            $table->text('text');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

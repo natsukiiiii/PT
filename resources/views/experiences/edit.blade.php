@@ -32,13 +32,7 @@
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                                 <p class="text-left" style=" font-size:16px;color:#6B778C;">経験した分野を編集します。</p>
-                                <textarea class="border text-left"
-                                name="name" value="{{ $experience->name }}"
-                                placeholder="ex) OO大学病院, リハビリテーション科、整形外来"
-                                cols="30" rows="10"
-                                style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">
-                                    {{ $experience->name }}
-                                </textarea>
+                                <textarea class="border text-left"name="name" value="{{ $experience->name }}"placeholder="ex) OO大学病院, リハビリテーション科、整形外来"cols="30" rows="10"style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">{{ $experience->name }}</textarea>
 
                             <br><button type="submit" class="btn btn-primary" style="margin-top:40px; background-color:#2E77FD;color:white;">編集する</button>
 
