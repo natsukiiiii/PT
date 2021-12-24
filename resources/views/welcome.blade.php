@@ -14,7 +14,7 @@
          
         <meta property="og:title" content="治療化向けQ＆Aアプリ" />
          
-        <meta property="og:description" content="治療化向けQ＆Aアプリ" />
+        <meta property="og:description" content="ワンクリックで最適な治療選択を。" />
          
         <meta property="og:site_name" content="PT" />
          
