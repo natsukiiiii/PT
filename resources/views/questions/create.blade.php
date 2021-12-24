@@ -39,8 +39,8 @@
 
             {{-- START TITLE --}}
             <div class="form-group" style="border: none;">
-                <input name="title" value="{{ old('title') }}"
-                style="padding: 7px 0;
+                <input name="title" required value="{{ old('title') }}"
+                class="pl-3 my-3" style="padding: 7px 0;
             margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:28px; border-radius:8px;"
             type="text" value="" placeholder="Title" >
                 　　 </div>
@@ -54,8 +54,8 @@
                     <div class="card-body">
 
                             <div class="form-group">
-                                <textarea id="markdown_editor_textarea" name="text" style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
-                                class="form-control " placeholder="治療や知見に関する質問をしてみましょう。
+                                <textarea id="markdown_editor_textarea" name="text" required style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
+                                class="form-control " placeholder="マークダウン記法使えます。　治療や知見に関する質問をしてみましょう。
 新しい可能性が見つかります。
 
 ex)膝OAの痛みの主な原因は脂肪体でしょうか？

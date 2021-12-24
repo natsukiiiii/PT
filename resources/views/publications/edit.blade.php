@@ -21,7 +21,7 @@
                 <div class="text-center">
                     <div class="card-body">
                         <h3 style="margin-top:40px; font-size:34px;"
-                        class="text-left font-weight-bold">学歴</h3>
+                        class="text-left font-weight-bold">出版物</h3>
                         <div class="card-body">
                         </div>
 
@@ -29,12 +29,8 @@
                             <form action="{{ route('publication.update', $publication->id) }}" method="post">
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
-                                <p class="text-left" style=" font-size:16px;color:#6B778C;">学歴を編集します。</p>
-                                <textarea class="border text-left" name="name" value="{{ $publication->name }}"
-                                     placeholder="ex) OO大学,理学療法学科" cols="30" rows="10"
-                                     style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">
-                                    {{ $publication->name }}
-                                </textarea>
+                                <p class="text-left" style=" font-size:16px;color:#6B778C;">出版物を編集します。</p>
+                                <textarea class="border text-left py-3 px-3" name="name" value="{{ $publication->name }}"placeholder="ex) OO大学,理学療法学科" cols="30" rows="10"style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">{{ $publication->name }}</textarea>
 
                             <button type="submit" class="btn btn-primary" style="margin-top:40px; background-color:#2E77FD;color:white;">編集する</button>
 

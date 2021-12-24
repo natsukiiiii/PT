@@ -39,9 +39,8 @@
             {{-- START TITLE --}}
 
                     <div class="form-group" style="border: none;">
-                        <input name="title" value="{{ old('title') }}"
-                            style="padding: 7px 0;
-                        margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:28px; border-radius:8px;"
+                        <input class="my-3 pl-3" name="title" required value="{{ old('title') }}"
+                            style="margin: 20px 0;line-height: 1.5; font-weight: 700; border: none; width: 100%; font-size:28px; border-radius:8px;"
                             type="text" value="" placeholder="Title" >
                         　　 </div>
             {{-- END TITLE --}}
@@ -53,8 +52,8 @@
                 <div class="text-center col-md-6">
                     <div class="card-body">
                             <div class="form-group">
-                                <textarea id="markdown_editor_textarea_post"　name="text" style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
-                                    class="form-control " placeholder="治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
+                                <textarea id="markdown_editor_textarea_post"　name="text" required style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
+                                    class="form-control " placeholder="マークダウン記法使えます。　治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
 ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" >{{ old('text') }}</textarea>
                             </div>
