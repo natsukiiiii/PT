@@ -32,15 +32,9 @@
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
                                 <p class="text-left" style=" font-size:16px;color:#6B778C;">参加した学会を編集します。</p>
-                                <input  value="{{ $socialevent->date }}"　name="date" type="text" placeholder="参加日 ex) 2021/12/24" style="padding: 0.6em 0 0.6em 3.7em;
-                                line-height: 1.4; width:100%; background-color:#f1f5f9;" class="card my-3">
-                                <textarea class="border text-left" name="name"
-                                value="{{ $socialevent->name }}"
-                                placeholder="ex) OO大学病院, リハビリテーション科、整形外来"
-                                cols="30" rows="10"
-                                style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">
-                                    {{ $socialevent->name }}
-                                </textarea>
+                                <input  value="{{ $socialevent->date }}"　name="date" type="text" placeholder="参加日 ex) 2021/12/24" style="
+                                line-height: 1.4; width:100%; background-color:#f1f5f9;" class="card my-3 pl-3 py-3">
+                                <textarea class="border text-left py-3 px-3" name="name"value="{{ $socialevent->name }}"placeholder="ex) OO大学病院, リハビリテーション科、整形外来"cols="30" rows="10"style="background-color:#f1f5f9;border-radius: 6px; width: 100%;">{{ $socialevent->name }}</textarea>
 
                             <br><button type="submit" style="margin-top:40px; background-color:#2E77FD;color:white;" class="btn btn-primary">編集する</button>
 
