@@ -64,7 +64,7 @@ ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="
 
                         </form>
                     </div>
-                    <a href="#" style="color:#6B778C;">いい記事を書くには？<i class="fas fa-arrow-right"></i></a>
+                    <a href="../goodPosts" style="color:#6B778C;">いい記事を書くには？<i class="fas fa-arrow-right"></i></a>
                 </div>
                   {{-- END入力 --}}
  {{-- STARTプレビュー --}}

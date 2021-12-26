@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
+Route::resource('goodPosts', 'GoodPostController');
 Route::resource('users', 'UserController');
 Route::resource('comments', 'CommentController');
 Route::resource('questions', 'QuestionController');

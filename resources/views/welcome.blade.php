@@ -18,7 +18,7 @@
          
         <meta property="og:site_name" content="PT" />
          
-        <meta property="og:image" content="https://pt-app1.herokuapp.com/assets/images/toppage.png" />
+        <meta property="og:image" content="https://pt-app1.herokuapp.com/assets/images/toppage.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts -->
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
-                    <img src="{{ asset('assets/images/toppage.png') }}" style="margin-top:20px; border:none;"
+                    <img src="{{ asset('assets/images/toppage.jpg') }}" style="margin-top:20px; border:none;"
                         class="text-right img-thumbnail mb-3" width="750px" height="750px" alt="">
                 </div>
 

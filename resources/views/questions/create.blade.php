@@ -66,7 +66,7 @@ ex)肩関節周囲炎が凍結肩に移行し治療が難航しているので�
 
                         </form>
                     </div>
-                    <a class="text-center" href="#" style="color:#6B778C;">いい記事を書くには？<i class="fas fa-arrow-right"></i></a>
+                    <a class="text-center" href="../goodPosts" style="color:#6B778C;">いい記事を書くには？<i class="fas fa-arrow-right"></i></a>
                 </div>
             {{-- END入力 --}}
 
