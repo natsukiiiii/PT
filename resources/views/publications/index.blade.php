@@ -34,6 +34,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
+                                    @if(Auth::id() === $user_id)
                                     @foreach ($publications as $publication)
                                     <div class="card text-left" style="margin-bottom:40px;">
                                         <div class="card-body">
@@ -77,6 +78,7 @@
 
 
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <form action="{{ route('publication.store', Auth::id()) }}" method="post">

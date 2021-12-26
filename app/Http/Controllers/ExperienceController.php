@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Experience;
+
+use App\User;
+
 use Auth;
 
 
@@ -16,8 +19,51 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        $experiences = Experience::all();
-        return view('experiences.index', compact('experiences'));
+
+        // // IF分でユーザーがいなかったら４０４に飛ばす
+        // if(Auth::id() !== $user->id){
+        //     return abort(404);
+        // }
+
+        $user = User::get();
+        // $user = Auth::id();
+
+        // dd($user);
+
+        // !? ログインユーザー取得
+
+        
+        $user_id = Experience::get(['user_id']);
+        // $user_id = Experience::get();
+// $user = User::find();
+
+// $user = auth()->user()->id;
+        // dd($user);
+// 
+// $user = $user_id
+
+
+        // 投稿中user_idを取得する
+        // dd($user);
+
+        // 投稿したuser_idとlogin user ===
+
+        // $experiences = Experience::get();
+        $experiences = Experience::get();
+
+        // if(Auth::id() !== $user_id){
+        //     return abort(404);
+        // }
+        // dd($experiences);
+
+        if(Auth::user() === $user_id){
+            return view('experiences.index', compact('user', 'user_id', 'experiences'));
+        }
+        // dd($user_id);
+
+        // $user->load('experience');
+
+        return view('experiences.index', compact('user_id', 'user', 'experiences'));
     }
 
     /**
@@ -40,6 +86,9 @@ class ExperienceController extends Controller
     {
         $input = $request->all();
         $input['user_id'] = Auth::id();
+        // if(Auth::id() !== $experience->user_id){
+        //     return abort(404);
+        // }
         Experience::create($input);
         return redirect()->route('experience.index');
     }
@@ -52,7 +101,7 @@ class ExperienceController extends Controller
      */
     public function show($id)
     {
-
+        
 
     }
 
@@ -63,8 +112,13 @@ class ExperienceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
+    
     {
+        // dd($id);
         $experience = Experience::find($id);
+        if(Auth::id() !== $experience->user_id){
+            return abort(404);
+        }
         // dd($experience);
         return view('experiences.edit', compact('experience'));
         // dd($experiences->id);
@@ -81,6 +135,9 @@ class ExperienceController extends Controller
     public function update(Request $request, $id)
     {
         $experience = Experience::find($id);
+        if(Auth::id() !== $experience->user_id){
+            return abort(404);
+        }
         // dd($id);
         $experience->update($request->all());
         // return view('experiences.edit', compact('experience'));
@@ -97,6 +154,9 @@ class ExperienceController extends Controller
     public function destroy($id)
     {
         $experience = Experience::find($id);
+        if(Auth::id() !== $experience->user_id){
+            return abort(404);
+        }
         $experience -> delete();
         return redirect()->route('experience.index');
     }

@@ -17,8 +17,12 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        $publications = Publication::all();
-        return view('publications.index', compact('publications'));
+        $user_id = Publication::get(['user_id']);
+        $publications = Publication::get();
+        if(Auth::user() === $user_id){
+            return view('publications.index', compact('user_id', 'publications'));
+        }
+        return view('publications.index', compact('user_id', 'publications'));
     }
 
     /**
