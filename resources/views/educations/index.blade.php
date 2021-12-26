@@ -33,6 +33,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
+                                    @if(Auth::id() === $user_id)
                                     @foreach ($educations as $education)
                                     <div class="card text-left" style="margin-bottom:40px;">
 
@@ -68,6 +69,7 @@
 
 
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>

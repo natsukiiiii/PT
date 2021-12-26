@@ -34,6 +34,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
+                                    @if(Auth::id() === $user_id)
+
                                     @foreach ($socialevents as $socialevent)
                                     <div class="card text-left" style="margin-bottom:40px;">
 
@@ -72,6 +74,7 @@
                                         </div>
                                     </div>
                                         @endforeach
+                                        @endif
 
                                 </div>
                             </div>

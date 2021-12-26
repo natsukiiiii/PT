@@ -16,8 +16,12 @@ class SocialEventController extends Controller
      */
     public function index()
     {
+        $user_id = Socialevent::get(['user_id']);
         $socialevents = Socialevent::all();
-        return view('socialevents.index', compact('socialevents'));
+        if(Auth::user() === $user_id){
+            return view('socialevents.index', compact('user_id', 'socialevents'));
+        }
+        return view('socialevents.index', compact('user_id', 'socialevents'));
     }
 
     /**

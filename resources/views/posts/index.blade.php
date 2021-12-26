@@ -64,7 +64,7 @@
                     <div class="card-body"
                         style="margin-bottom:40px;  border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
                         <h5 style="font-size:16px;" class="card-title font-weight-bold">{{ Str::limit($post->title, 160, '(...)' )}}</h5>
-                        <p class="text card-text" style="margin:20px 0 40px 0;">{{ Str::limit($post->text, 300, '(...)' )}}</p>
+                        {{-- <p class="card-text" style="margin:20px 0 40px 0;">{{ Str::limit($post->text, 300, '(...)' )}}</p> --}}
                         <a href="{{ route('posts.show', $post->id) }}"
                             style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"
                             class="btn btn-primary">投稿へコメントする</a>

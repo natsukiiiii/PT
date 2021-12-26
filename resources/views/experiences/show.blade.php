@@ -35,15 +35,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    @if(Auth::id() === $user_id)
-                                                {{-- @dd($user); --}}
+                                    {{-- @dd($user); --}}
+
+                                    {{-- @foreach ($user->experience as $experience) --}}
                                     @foreach ($experiences as $experience)
-                                                {{-- @dd($experiences); --}}
 
-                                    {{-- @if(Auth::id() === $user_id) --}}
-
-                                                {{-- @dd($experiences); --}}
-
+                                    {{-- @dd($experience); --}}
                                     <div class="card text-left" style="margin-bottom:40px;">
                                         <div class="card-body">
                                             <div class="form-group">
@@ -51,7 +48,6 @@
                                                 <div class="d-flex flex-row-reverse">
 
                                                 {{-- 削除ボタン --}}
-                                                
                                                 <div class="text-right d-inline">
 
                                                     <form action=' {{ route('experience.destroy', $experience->id) }}'
@@ -66,10 +62,6 @@
                                                          </button>
                                                     </form>
                                                 </div>
-                                              
-
-
-                                                
                                                  {{-- 編集ボタン --}}
                                                  <div class=" text-right d-inline mr-2">
                                                     <a href="{{ route('experience.edit', $experience->id) }}"   style="font-size:120%;" class="btn bg-transparent  text-secondary"
@@ -81,14 +73,26 @@
                                         </div>
                                     </div>
 
-                                    @endforeach
-                        @endif
+                                    {{-- <div class=" text-right">
+                                        <a href="{{ route('experience.edit', $experience->id) }}" class="btn"
+                                            style="background-color:#2E77FD;color:white;">編集</a>
+                                    </div> --}}
 
+                                    {{-- <div class="text-right">
+
+                                        <form action=' {{ route('experience.destroy', $experience->id) }}'
+                                            method='post'>
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <input type='submit' value='削除' class="btn btn-light"
+                                                onclick='return confirm("削除しますか？？");'>
+                                        </form>
+                                    </div> --}}
+                                    @endforeach
                                 </div>
 
                             </div>
                         </div>
-
                     </div>
 
                     <div class="container">

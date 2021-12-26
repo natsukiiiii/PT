@@ -54,7 +54,7 @@ class="text-left font-weight-bold"> 質問一覧</h5>
                     @foreach ($questions as $question)
                     <div class="card-body" style="margin-bottom:40px;  border-bottom:solid;border-color:#D2D6DC;border-width:1px;">
                         <p style="font-size:16px;" class="card-title font-weight-bold">{{ Str::limit($question->title, 160, '(...)' )}}</p>
-                        <p class="text card-text" style="margin:20px 0 40px 0;">{{ Str::limit($question->text, 300, '(...)' )}}</p>
+                        {{-- <p class="text card-text" style="margin:20px 0 40px 0;">{{ Str::limit($question->text, 300, '(...)' )}}</p> --}}
 
 
                         <a href="{{ route('questions.show', $question->id) }}" style="margin:0 0 40px 0; background-color:#2E77FD;color:white;"

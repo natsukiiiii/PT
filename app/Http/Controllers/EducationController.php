@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Education;
+
 use Auth;
 
 
@@ -16,8 +17,15 @@ class EducationController extends Controller
      */
     public function index()
     {
-        $educations = Education::all();
-        return view('educations.index', compact('educations'));
+
+        $user_id = Education::get(['user_id']);
+        $educations = Education::get();
+
+        if(Auth::user() === $user_id){
+            return view('educations.index', compact('user_id', 'educations'));
+        }
+
+        return view('educations.index', compact('user_id','educations'));
     }
 
     /**
