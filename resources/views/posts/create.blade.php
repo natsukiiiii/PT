@@ -19,7 +19,9 @@
 
 <body class="bg-white">
     @section('content')
-    <div class="container">
+    {{-- <div class="container"> --}}
+    <div class="">
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 @if($errors->any())
@@ -52,7 +54,7 @@
                 <div class="text-center col-md-6">
                     <div class="card-body">
                             <div class="form-group">
-                                <textarea id="markdown_editor_textarea_post"　name="text" required style="border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
+                                <textarea id="markdown_editor_textarea_post"　name="text" required style="height:100vh ;border: none; width:100%; border-radius:8px; padding: 2.5rem 3.3rem; box-shadow:0px 1px 41px -23px;"
                                     class="form-control " placeholder="マークダウン記法使えます。　治療家、セラピストの治療や知見に関わる知識を書いて共有しましょう。
 
 ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="20" >{{ old('text') }}</textarea>
@@ -70,7 +72,7 @@ ex)論文掲載、学会勉強会情報、症例に最適だった治療" rows="
     <div class="card-body">
         
             <div class="form-group" id="markdown_preview_post" style=" padding: 1rem;
-            height: 34rem; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
+            height: 100vh; overflow:scroll; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
                 
             </div>
            

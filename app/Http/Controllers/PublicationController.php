@@ -49,7 +49,7 @@ class PublicationController extends Controller
         $input = $request->all();
         $input['user_id'] = Auth::id();
         Publication::create($input);
-        return redirect()->route('publication.index', $auth_id);
+        return redirect()->route('publication.index', $auth_id)->with('flash_message', 'プロフィールに追加されました!');
     }
 
     /**

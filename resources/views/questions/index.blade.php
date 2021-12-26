@@ -46,6 +46,11 @@
                 </form>
             </div>
             <div class="col-md-8">
+                @if (session('flash_message'))
+                <div class=" py-3 px-3 flash_left h3 text-left my-3" style="opacity: 0.5; font-weight: bold; border-radius:9px; margin:0 0 40px 0; background-color:#2E77FD;color:white;">
+                   <i class="fas fa-check-circle mx-3"></i>{{ session('flash_message') }}
+               </div>
+           @endif
                 <h5 style="margin:40px 0 40px 0; font-size:24px;"
 class="text-left font-weight-bold"> 質問一覧</h5>
                 <div class="text-left">

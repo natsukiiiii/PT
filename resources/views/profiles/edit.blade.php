@@ -41,6 +41,11 @@
                                 {{-- <a href="{{ route('users.show', Auth::id()) }}">検索</a> --}}
 
                             </div>
+                            @if (session('flash_message'))
+                                <div class=" py-3 px-3 flash_left h5 text-left my-3" style="opacity: 0.5; font-weight: bold; border-radius:9px; margin:0 0 40px 0; background-color:#2E77FD;color:white;">
+                                   <i class="fas fa-check-circle mx-3"></i>{{ session('flash_message') }}
+                               </div>
+                           @endif
 
                             <div class="form-group text-left" style="margin-top:40px;">
                                 @if ($user->image_path == null)

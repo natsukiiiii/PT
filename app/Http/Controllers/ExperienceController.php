@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Experience;
+use Illuminate\Support\Collection;
 
 use App\User;
 
@@ -24,7 +25,7 @@ class ExperienceController extends Controller
         // if(Auth::id() !== $user->id){
         //     return abort(404);
         // }
-
+$id = Auth::id();
         $user = User::get();
         // $user = Auth::id();
 
@@ -56,14 +57,14 @@ class ExperienceController extends Controller
         // }
         // dd($experiences);
 
-        if(Auth::user() === $user_id){
-            return view('experiences.index', compact('user', 'user_id', 'experiences'));
+        if($id === $user_id){
+            return view('experiences.index', compact('id', 'user', 'user_id', 'experiences'));
         }
         // dd($user_id);
 
         // $user->load('experience');
 
-        return view('experiences.index', compact('user_id', 'user', 'experiences'));
+        return view('experiences.index', compact('id', 'user_id', 'user', 'experiences'));
     }
 
     /**
@@ -90,7 +91,7 @@ class ExperienceController extends Controller
         //     return abort(404);
         // }
         Experience::create($input);
-        return redirect()->route('experience.index');
+        return redirect()->route('experience.index')->with('flash_message', 'プロフィールに追加されました!');
     }
 
     /**
