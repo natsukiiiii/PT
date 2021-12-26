@@ -19,7 +19,7 @@
 
 <body class="bg-white">
     @section('content')
-    <div class="container">
+    <div class="">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 @if($errors->any())
@@ -54,7 +54,7 @@
                     <div class="card-body">
 
                             <div class="form-group">
-                                <textarea id="markdown_editor_textarea" name="text" required style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
+                                <textarea id="markdown_editor_textarea" name="text" required style="height:100vh; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
                                 class="form-control " placeholder="マークダウン記法使えます。　治療や知見に関する質問をしてみましょう。
 新しい可能性が見つかります。
 
@@ -76,7 +76,7 @@ ex)肩関節周囲炎が凍結肩に移行し治療が難航しているので�
                     <div class="card-body">
                         
                             <div class="form-group" id="markdown_preview" style=" padding: 1rem;
-                            height: 34rem; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
+                            height: 100vh; overflow:scroll; border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;">
                                 
                             </div>
                            

@@ -85,7 +85,7 @@ class QuestionController extends Controller
         $input = $request->all();
         $input['user_id'] = Auth::id();
         Question::create($input);
-        return redirect()->route('questions.index');
+        return redirect()->route('questions.index')->with('flash_message', '投稿が完了しました!');
     }
 
     /**

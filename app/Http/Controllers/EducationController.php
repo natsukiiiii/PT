@@ -49,7 +49,7 @@ class EducationController extends Controller
         $input = $request->all();
         $input['user_id'] = Auth::id();
         Education::create($input);
-        return redirect()->route('education.index');
+        return redirect()->route('education.index')->with('flash_message', 'プロフィールに追加されました!');
 
     }
 

@@ -52,7 +52,7 @@ class SocialEventController extends Controller
            $input = $request->all();
            $input['user_id'] = Auth::id();
            Socialevent::create($input);
-           return redirect()->route('socialevent.index');
+           return redirect()->route('socialevent.index')->with('flash_message', 'プロフィールに追加されました!');
 
 
     }

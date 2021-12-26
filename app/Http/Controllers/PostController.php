@@ -85,7 +85,7 @@ $posts = Post::orderBy('id', 'DESC')->paginate(20);
 
         Post::create($input);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('flash_message', '投稿が完了しました!');
     }
 
     /**

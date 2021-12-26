@@ -134,7 +134,7 @@ class ProfileController extends Controller
         $user->save();
 
 
-        return redirect()->route('profile.edit', $auth_id);
+        return redirect()->route('profile.edit', $auth_id)->with('flash_message', 'プロフィールに追加されました!');
     }
 
     /**
