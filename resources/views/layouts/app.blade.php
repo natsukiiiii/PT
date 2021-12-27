@@ -20,7 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('../../css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon"  href="{{ asset('assets/images/favicon.png')  }}">
+    {{-- <link rel="icon" type="image/png"  href="{{ asset('assets/images/favicon.png')  }}" sizes="16x16"> --}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon2.ico')  }}">
+
 </head>
 
 <body>

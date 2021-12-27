@@ -52,7 +52,7 @@
                         {{-- <label style="color:#6B778C;">コメント</label> --}}
                         <textarea
                         name="text" style="border: none; width:100%; border-radius:8px;  padding: 2.5rem 3.3rem;  box-shadow:0px 1px 41px -23px;"
-                            class="form-control" placeholder="質問の回答を記入します" rows="5" >{{ old('text') }}</textarea>
+                            class="form-control" placeholder="コメントを記入します" rows="5" >{{ old('text') }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary"
                         style="margin:0 0 40px 0; background-color:#2E77FD;color:white;">コメントする</button>
