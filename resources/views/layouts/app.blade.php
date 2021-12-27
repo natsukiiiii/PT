@@ -20,7 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('../../css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon"  href="{{ asset('/public/assets/images/favicon.ico')  }}">
+    <link rel="shortcut icon" type="image/x-icon"  href="{{ asset('assets/images/favicon.png')  }}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/public/favicon.png')  }}"> --}}
+
 </head>
 
 <body>
@@ -47,6 +49,10 @@
                             aria-haspopup="false" aria-expanded="false" v-pre>
 
                             @if(Auth::check())
+            {{-- <img src="{{ asset('assets/images/favicon.png')  }}" style="height:150px; width:150px;" alt=""> --}}
+            {{-- <img src="{{ asset('public/favicon.png')  }}" style="height:150px; width:150px;" alt=""> --}}
+
+
                              <a style="color:#6B778C;" href="{{ route('users.show', Auth::id()) }}"><i
                                 class="fas fa-user-circle fa-lg"> </i> profile </a>
                             @endif
